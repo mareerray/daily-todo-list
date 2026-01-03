@@ -677,7 +677,8 @@ form button:hover {
     .priority-select {
         font-size: var(--fs-label);
         line-height: 1.8;
-        flex: 1;
+        flex: 0 0 auto;
+        max-width: 100px;
         border-left: none;
         border-right: 1px solid rgba(0,0,0,0.05);
     }
@@ -777,7 +778,8 @@ form button:hover {
     .priority-select {
         font-size: var(--fs-label);
         padding: 0.3rem 0.2rem;
-        min-width: 90px;
+        min-width: 80px;
+        max-width: 80px;
     }
 
     select {
