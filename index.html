@@ -42,12 +42,17 @@
         <div class="input-container">
             <form>
                 <div class="input-group">
-                    <input type="text" class="todo-input" placeholder="Add a task for today..." maxlength="50">
-                    <select class="priority-select" title="Priority">
-                        <option value="high" title="Do it now - Tasks that need immediate attention">🔴 High - Do it now</option>
-                        <option value="medium" selected title="Finish soon - Tasks to complete today">🟡 Medium - Finish soon</option>
-                        <option value="low" title="Plan for later - Tasks that can wait">🔵 Low - Plan for later</option>
+                    <select class="priority-select" title="Priority" id="prioritySelect">
+                        <option value="high">🔴 High</option>
+                        <option value="medium" selected>🟡 Medium</option>
+                        <option value="low">🔵 Low</option>
                     </select>
+                    <datalist id="priorityDescriptions">
+                        <option data-value="high">🔴 High - Do it now (Tasks that need immediate attention)</option>
+                        <option data-value="medium">🟡 Medium - Finish soon (Tasks to complete today)</option>
+                        <option data-value="low">🔵 Low - Plan for later (Tasks that can wait)</option>
+                    </datalist>
+                    <input type="text" class="todo-input" placeholder="Add a task for today..." maxlength="50">
                     <button class="todo-button" type="submit">
                         <i class="bi bi-plus-circle-fill"></i>
                     </button>
@@ -67,6 +72,13 @@
                 <button class="sort-btn"><i class="bi bi-sort-down fs-4"></i> Priority</button>
             </div>
         </div>
+
+        <!-- PRIORITY LEGEND -->
+        <div class="priority-legend">
+            <span class="legend-item"><span class="legend-dot high"></span> <strong>High:</strong> Do it now</span>
+            <span class="legend-item"><span class="legend-dot medium"></span> <strong>Medium:</strong> Finish soon</span>
+            <span class="legend-item"><span class="legend-dot low"></span> <strong>Low:</strong> Plan later</span>
+        </div>
     </div>
         <!-- TODO LIST SECTION -->
         <div class="todo-container">
@@ -74,5 +86,20 @@
         </div>
 
     <script src="app.js"></script>
+    <script>
+        // Add descriptions to priority select options
+        const priorityDescriptions = {
+            high: "🔴 High - Do it now (Tasks that need immediate attention)",
+            medium: "🟡 Medium - Finish soon (Tasks to complete today)",
+            low: "🔵 Low - Plan for later (Tasks that can wait)"
+        };
+
+        const prioritySelect = document.getElementById('prioritySelect');
+        
+        // Add title attributes to options for tooltip display
+        prioritySelect.querySelectorAll('option').forEach(option => {
+            option.title = priorityDescriptions[option.value];
+        });
+    </script>
 </body>
 </html>
