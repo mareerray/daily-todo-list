@@ -64,18 +64,26 @@ body {
 
 /* HEADER styling */
 
+.title-section {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.subtitle-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 .logo-title {
     font-size: var(--fs-h1);
     letter-spacing: .2em;
     text-transform: lowercase;
-}
-
-.subtitle-with-icons {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin-top: 0.5rem;
+    margin: 0;
 }
 
 .logo-subtitle {
@@ -125,15 +133,10 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
-}
-
-.header-left {
-    flex: 1;
-    min-width: 200px;
 }
 
 .date-selector {
@@ -214,18 +217,16 @@ header {
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    display: none;
 }
 
 .selected-date-display {
-    font-size: 1rem;
+    font-size: var(--fs-icon);
     color: var(--clr-btn-accent);
     font-weight: 600;
     letter-spacing: 0.05em;
     min-width: 100px;
-    text-align: right;
+    text-align: center;
     font-family: var(--ff-secondary);
 }
 
@@ -439,7 +440,7 @@ form button:hover {
 .todo-list {
     min-width: 30%;
     list-style: none;
-    width: min(960px, 100%);
+    width: min(700px, 100%);
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -611,33 +612,35 @@ form button:hover {
         padding: 1.25rem;
     }
 
+    .title-section {
+        margin-bottom: 0.8rem;
+    }
+
+    .subtitle-section {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
     header {
-        gap: 1rem;
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .header-left {
-        text-align: center;
-    }
-
-    .subtitle-with-icons {
+        gap: 0.5rem;
+        flex-wrap: wrap;
         justify-content: center;
     }
 
     .date-selector {
-        justify-content: center;
         width: 100%;
+        justify-content: center;
     }
 
-    .header-right {
-        justify-content: center;
-        width: 100%;
+    .date-picker {
+        flex: 1;
+        min-width: 120px;
     }
 
     .selected-date-display {
-        text-align: center;
-        width: 100%;
+        font-size: var(--fs-icon);
+        min-width: 80px;
+        padding: 0.5rem 0.8rem;
     }
 
     .input-container {
@@ -739,7 +742,7 @@ form button:hover {
     }
 
     .selected-date-display {
-        font-size: 0.9rem;
+        font-size: var(--fs-icon);
         min-width: auto;
     }
 
