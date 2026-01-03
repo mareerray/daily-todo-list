@@ -53,9 +53,9 @@ body {
 }
 
 .todo-app {
-    width: min(960px, 100%);
+    width: min(720px, 100%);
     box-shadow: var(--bs);
-    padding: 2.25rem;
+    padding: 2rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -603,7 +603,12 @@ form button:hover {
     }
 
     body {
-        padding: 1.5rem 1rem 2rem;
+        padding: 1rem 0.75rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .todo-app {
+        padding: 1.25rem;
     }
 
     header {
@@ -638,7 +643,8 @@ form button:hover {
     .input-container {
         flex-direction: column;
         align-items: stretch;
-        gap: 0.75rem;
+        gap: 0.5rem;
+        margin: 1rem 0;
     }
 
     .input-group {
@@ -693,11 +699,22 @@ form button:hover {
     .filter-sort-container {
         flex-direction: row-reverse;
         justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+
+    .select {
+        min-width: auto;
+        flex: 1;
+    }
+
+    select.filter-todo {
+        width: 100%;
     }
 
     .sort-btn {
         padding: 0.8rem 0.5rem;
         font-size: var(--fs-label);
+        flex-shrink: 0;
     }
 
 }
@@ -766,7 +783,7 @@ form button:hover {
     }
 
     .todo-app {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .trash-btn, .complete-btn {
