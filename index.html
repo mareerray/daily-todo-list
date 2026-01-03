@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Daily Todo List</title>
+</head>
+<body>
+    <div class="todo-app">
+        <!-- HEADER -->
+        <header>
+            <div class="header-left">
+                <h1 class="logo-title">daily &lt;todo&gt;</h1>
+                <div class="subtitle-with-icons">
+                    <h3 class="logo-subtitle">by Mayuree Reunsati</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/mareerray" target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/mayuree-reunsati" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="date-selector">
+                <button class="date-nav-btn" id="prevDateBtn"><i class="bi bi-chevron-left"></i></button>
+                <input type="date" id="todayDatePicker" class="date-picker">
+                <button class="date-nav-btn" id="nextDateBtn"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <div class="header-right">
+                <div class="selected-date-display" id="selectedDateDisplay"></div>
+            </div>
+        </header>
+
+        <!-- INPUT SECTION -->
+        <div class="input-container">
+            <form>
+                <div class="input-group">
+                    <input type="text" class="todo-input" placeholder="Add a task for today...">
+                    <select class="priority-select" title="Priority">
+                        <option value="high" title="Do it now - Tasks that need immediate attention">🔴 High - Do it now</option>
+                        <option value="medium" selected title="Finish soon - Tasks to complete today">🟡 Medium - Finish soon</option>
+                        <option value="low" title="Plan for later - Tasks that can wait">🔵 Low - Plan for later</option>
+                    </select>
+                    <button class="todo-button" type="submit">
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </button>
+                </div>
+            </form>
+            <div class="filter-sort-container">
+                <div class="select">
+                    <select name="todos" class="filter-todo">
+                        <option value="all">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="uncompleted">Active</option>
+                        <option value="high">🔴 High - Do it now</option>
+                        <option value="medium">🟡 Medium - Finish soon</option>
+                        <option value="low">🔵 Low - Plan for later</option>
+                    </select>
+                </div>
+                <button class="sort-btn"><i class="bi bi-sort-down fs-4"></i> Priority</button>
+            </div>
+        </div>
+    </div>
+        <!-- TODO LIST SECTION -->
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
+        </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
