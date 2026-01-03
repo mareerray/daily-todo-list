@@ -534,6 +534,10 @@ form button:hover {
     display: flex;
     align-items: center;
     padding: 0 0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    min-width: 0;
 }
 
 .trash-btn, .complete-btn {
