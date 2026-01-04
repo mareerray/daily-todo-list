@@ -775,7 +775,7 @@ form button:hover {
 
 /* Responsive MOBILE */
 
-@media (max-width: 375px) {
+@media (max-width: 370px) {
     .date-selector {
         padding: 0.5rem 0.5rem;
         gap: 0.4rem;
@@ -837,27 +837,34 @@ form button:hover {
         background: #2196f3;
     }
 
+    .todo-input::placeholder {
+        font-size: 0.9rem;
+    }
+
     .social-icons a {
         width: 18px;
         height: 18px;
     }
 
     .todo-input {
-        padding: 0 0.6rem;
-        font-size: var(--fs-label);
+        padding: 0 0.4rem;
+        font-size: 0.9rem;
         min-width: 0;
         flex: 1;
+        height: 2.2rem;
     }
 
     .todo-button {
-        padding: 0 0.6rem;
+        padding: 0 0.5rem;
+        flex-shrink: 0;
     }
 
     .priority-select {
         font-size: var(--fs-label);
         padding: 0.3rem 0.2rem;
-        min-width: 70px;
-        max-width: 70px;
+        min-width: 50px;
+        max-width: 50px;
+        flex-shrink: 0;
     }
 
     select {
@@ -879,6 +886,8 @@ form button:hover {
         overflow: hidden;
         min-width: 0;
         flex: 1;
+        gap: 0;
+        height: 2.5rem;
     }
 
     .filter-sort-container {
