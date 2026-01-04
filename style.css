@@ -674,9 +674,11 @@ form button:hover {
     }
 
     header {
-        gap: 0.5rem;
-        flex-wrap: nowrap;
+        display: flex;
         justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: nowrap;
     }
 
     .date-selector {
