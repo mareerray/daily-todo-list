@@ -1,7 +1,7 @@
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open('todo-v1').then((cache) => cache.addAll([
-      '/', '/index.html', '/style.css', '/app.js', '/favicon.ico'
+      '/', '/index.html', '/style.css', '/app.js', '/favicon.ico', '/icon-192.png', '/icon-512.png'
     ])),
   );
 });
