@@ -95,10 +95,10 @@
             low: "🔵 Low - Plan for later (Tasks that can wait)"
         };
 
-        const prioritySelect = document.getElementById('prioritySelect');
-        
+        const prioritySelectEl = document.getElementById('prioritySelect');
+
         // Add title attributes to options for tooltip display
-        prioritySelect.querySelectorAll('option').forEach(option => {
+        prioritySelectEl.querySelectorAll('option').forEach(option => {
             option.title = priorityDescriptions[option.value];
         });
     </script>
