@@ -430,6 +430,7 @@ option {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: var(--clr-light);
 }
 
 select.filter-todo {
@@ -592,7 +593,7 @@ form button:hover {
     background: transparent;
     color: var(--clr-btn-accent);
     border: none;
-    padding: 0.6rem 0.7rem;
+    padding: 0.5rem 0.6rem;
     cursor: pointer;
     font-size: var(--fs-icon);
     transition: transform 0.15s ease, color 0.2s ease, filter 0.2s ease;
@@ -918,8 +919,8 @@ form button:hover {
 
     .sort-btn {
         flex: 1;
-        padding: 0.6rem 0.4rem;
-        font-size: 0.75rem;
+        padding: 0.7rem 0.5rem;
+        font-size: var(--fs-label);
     }
 
     .todo-app {
@@ -927,18 +928,13 @@ form button:hover {
     }
 
     .trash-btn, .complete-btn {
-        padding: 0.5rem 0.6rem;
+        padding: 0.3rem 0.4rem;
         font-size: var(--fs-icon);
     }
 
     .priority-indicator {
         width: 28px;
         height: 28px;
-        font-size: var(--fs-label);
-    }
-
-    .sort-btn {
-        padding: 0.8rem 0.5rem;
         font-size: var(--fs-label);
     }
 }
