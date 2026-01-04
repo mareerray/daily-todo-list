@@ -353,3 +353,7 @@ function removeLocalTodos(todo) {
     }
     localStorage.setItem('todos', JSON.stringify(todos));
 }
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}

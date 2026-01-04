@@ -47,7 +47,6 @@ body {
     gap: 1.5rem;
     padding: 2.5rem 1.25rem 3rem;
     background-color: #303030;
-    /* background-image: linear-gradient(135deg, #f7d774, #f08a67 45%, #df6d62); */
     color: var(--clr-light);
     font-family: var(--ff-primary);
 }

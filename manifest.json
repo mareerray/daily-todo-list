@@ -1,0 +1,15 @@
+{
+  "name": "Todo List App",
+  "short_name": "DailyTodoApp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#303030",
+  "theme_color": "#ff6f47",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}
