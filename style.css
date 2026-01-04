@@ -867,6 +867,41 @@ form button:hover {
 
     .input-container {
         gap: 4px;
+        flex-direction: row;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .input-group {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        border-radius: 12px;
+        overflow: hidden;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .filter-sort-container {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .select {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    select.filter-todo {
+        width: 100%;
+    }
+
+    .sort-btn {
+        flex: 1;
+        padding: 0.6rem 0.4rem;
+        font-size: 0.75rem;
     }
 
     .todo-app {
