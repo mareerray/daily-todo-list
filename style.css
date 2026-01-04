@@ -421,6 +421,7 @@ option {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 
 .filter-todo {
@@ -489,7 +490,6 @@ form button:hover {
     width: min(700px, 100%);
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
 }
 
 .todo {
@@ -713,20 +713,21 @@ form button:hover {
     }
 
     .todo-input {
-        padding: 1rem;
-        font-size: var(--fs-body);
+        padding: 0.8rem;
+        font-size: 0.9rem;
         min-width: 0;
         flex: 1;
-        border-bottom: none;
     }
 
     .priority-select {
-        font-size: var(--fs-label);
+        font-size: 0.8rem;
         line-height: 1.8;
         flex: 0 0 auto;
-        max-width: 90px;
-        border-right: none;
-        border-left: 1px solid rgba(0,0,0,0.05);
+        max-width: 80px;
+        min-width: 80px;
+        padding: 0.4rem 0.3rem;
+        border-right: 1px solid rgba(0,0,0,0.05);
+        border-left: none;
     }
 
     .todo-button {
@@ -754,6 +755,7 @@ form button:hover {
         flex-direction: row-reverse;
         justify-content: space-between;
         flex-wrap: nowrap;
+        gap: 0.3rem;
     }
 
     .select {
@@ -763,11 +765,13 @@ form button:hover {
 
     select.filter-todo {
         width: 100%;
+        padding: 0.8rem 0.5rem;
+        font-size: 0.8rem;
     }
 
     .sort-btn {
         padding: 0.8rem 0.5rem;
-        font-size: var(--fs-label);
+        font-size: 0.8rem;
         flex-shrink: 0;
     }
 
@@ -847,23 +851,24 @@ form button:hover {
     }
 
     .todo-input {
-        padding: 0 0.4rem;
-        font-size: 0.9rem;
+        padding: 0 0.5rem;
+        font-size: 0.8rem;
         min-width: 0;
         flex: 1;
-        height: 2.2rem;
+        height: 2.5rem;
     }
 
     .todo-button {
-        padding: 0 0.5rem;
+        padding: 0 0.6rem;
         flex-shrink: 0;
+        font-size: 1rem;
     }
 
     .priority-select {
-        font-size: var(--fs-label);
+        font-size: 0.75rem;
         padding: 0.3rem 0.2rem;
-        min-width: 50px;
-        max-width: 50px;
+        min-width: 75px;
+        max-width: 75px;
         flex-shrink: 0;
     }
 
@@ -891,9 +896,9 @@ form button:hover {
     }
 
     .filter-sort-container {
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: space-between;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 0.5rem;
         width: 100%;
     }
