@@ -1,6 +1,6 @@
 {
     "name": "Todo List App",
-    "short_name": "DailyTodoApp",
+    "short_name": "DailyTodo",
     "start_url": "/daily-todo-list/",
     "display": "standalone",
     "background_color": "#303030",
