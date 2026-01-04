@@ -502,7 +502,7 @@ form button:hover {
     font-weight: var(--fw-bold);
     display: grid;
     grid-template-columns: auto 1fr auto auto;
-    align-items: stretch;
+    align-items: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.4s ease;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);

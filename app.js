@@ -122,12 +122,17 @@ function deleteCheck(e) {
     //Delete
     if(item.classList[0]==='trash-btn') {
         const todo = item.parentElement;
-        //Animation        
-        todo.classList.add('fall');
-        removeLocalTodos(todo);
-        todo.addEventListener('transitionend', function() {
-            todo.remove();
-        });
+        const todoText = todo.querySelector('.todo-item').innerText;
+        
+        // Ask for confirmation before deleting
+        if(confirm(`Are you sure you want to delete "${todoText}"?`)) {
+            //Animation        
+            todo.classList.add('fall');
+            removeLocalTodos(todo);
+            todo.addEventListener('transitionend', function() {
+                todo.remove();
+            });
+        }
     }
 
     //Check Mark
