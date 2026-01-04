@@ -152,11 +152,12 @@ function deleteCheck(e) {
 
 function updateTodoCompletion(todoDiv) {
     const todoText = todoDiv.querySelector('.todo-item').innerText;
+    const todoDueDate = todoDiv.dataset.dueDate;
     let todos = [];
     if(localStorage.getItem('todos') !== null) {
         todos = JSON.parse(localStorage.getItem('todos'));
     }
-    const todoIndex = todos.findIndex(t => t.text === todoText && t.dueDate === formatDateKey(selectedDate));
+    const todoIndex = todos.findIndex(t => t.text === todoText && t.dueDate === todoDueDate);
     if(todoIndex > -1) {
         todos[todoIndex].completed = todoDiv.classList.contains('completed');
         localStorage.setItem('todos', JSON.stringify(todos));
