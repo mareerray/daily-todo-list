@@ -75,6 +75,12 @@ function addTodo(event) {
     const priority = prioritySelect.value;
     const dueDate = formatDateKey(selectedDate);
     
+    // Remove empty message if it exists
+    const emptyMsg = todoList.querySelector('.empty-message');
+    if(emptyMsg) {
+        emptyMsg.remove();
+    }
+    
     //Todo DIV
     const todoDiv = document.createElement('div');
     todoDiv.classList.add("todo");
