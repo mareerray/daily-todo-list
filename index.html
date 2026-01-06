@@ -54,7 +54,7 @@
         <header>
             <div class="selected-date-display" id="selectedDateDisplay"></div>
             <button class="date-nav-btn" id="prevDateBtn"><i class="bi bi-chevron-left"></i></button>
-            <input type="date" id="todayDatePicker" class="date-picker">
+            <button id="calendarBtn" class="date-picker"><i class="bi bi-calendar3"></i></button>
             <button class="date-nav-btn" id="nextDateBtn"><i class="bi bi-chevron-right"></i></button>
         </header>
 
@@ -105,7 +105,39 @@
             <ul class="todo-list"></ul>
         </div>
 
-    <script src="app.js"></script>
+    <!-- CALENDAR OVERLAY -->
+    <div id="calendarOverlay" class="calendar-overlay">
+        <div class="calendar-popup">
+            <div class="calendar-header">
+                <button id="prevMonthBtn" class="calendar-nav-btn"><i class="bi bi-chevron-left"></i></button>
+                <div id="calendarMonthYear" class="calendar-month-year"></div>
+                <button id="nextMonthBtn" class="calendar-nav-btn"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <div class="calendar-weekdays">
+                <div class="calendar-weekday">Su</div>
+                <div class="calendar-weekday">Mo</div>
+                <div class="calendar-weekday">Tu</div>
+                <div class="calendar-weekday">We</div>
+                <div class="calendar-weekday">Th</div>
+                <div class="calendar-weekday">Fr</div>
+                <div class="calendar-weekday">Sa</div>
+            </div>
+            <div id="calendarDays" class="calendar-days"></div>
+            <div class="calendar-footer">
+                <button id="calendarTodayBtn" class="calendar-today-btn">Today</button>
+                <button id="calendarCloseBtn" class="calendar-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load modules in order -->
+    <script src="js/i18n.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/todos.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+    
     <script>
         // Add descriptions to priority select options
         const priorityDescriptions = {

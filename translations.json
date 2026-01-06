@@ -34,7 +34,11 @@
         "priority_label_high": "Hoch",
         "priority_label_medium": "Mittel",
         "priority_label_low": "Niedrig",
-        "priority_badge_title_prefix": "Priorität:"
+        "priority_badge_title_prefix": "Priorität:",
+        "calendar_today": "Heute",
+        "calendar_close": "Schließen",
+        "monthNames": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+        "weekdayNames": ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"]
         },
         "en": {
         "input_add_placeholder": "Add a new task ...",
@@ -57,7 +61,11 @@
         "priority_label_high": "High",
         "priority_label_medium": "Medium",
         "priority_label_low": "Low",
-        "priority_badge_title_prefix": "Priority:"
+        "priority_badge_title_prefix": "Priority:",
+        "calendar_today": "Today",
+        "calendar_close": "Close",
+        "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "weekdayNames": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
         },
         "es": {
         "input_add_placeholder": "Agregar una nueva tarea ...",
@@ -80,7 +88,11 @@
         "priority_label_high": "Alta",
         "priority_label_medium": "Media",
         "priority_label_low": "Baja",
-        "priority_badge_title_prefix": "Prioridad:"
+        "priority_badge_title_prefix": "Prioridad:",
+        "calendar_today": "Hoy",
+        "calendar_close": "Cerrar",
+        "monthNames": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+        "weekdayNames": ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá"]
         },
         "fi": {
         "input_add_placeholder": "Lisää uusi tehtävä ...",
@@ -103,7 +115,11 @@
         "priority_label_high": "Korkea",
         "priority_label_medium": "Keskitaso",
         "priority_label_low": "Matala",
-        "priority_badge_title_prefix": "Prioriteetti:"
+        "priority_badge_title_prefix": "Prioriteetti:",
+        "calendar_today": "Tänään",
+        "calendar_close": "Sulje",
+        "monthNames": ["Tammikuu", "Helmikuu", "Maaliskuu", "Huhtikuu", "Toukokuu", "Kesäkuu", "Heinäkuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"],
+        "weekdayNames": ["Su", "Ma", "Ti", "Ke", "To", "Pe", "La"]
         },
         "it": {
         "input_add_placeholder": "Aggiungi una nuova attività ...",
@@ -126,7 +142,11 @@
         "priority_label_high": "Alta",
         "priority_label_medium": "Media",
         "priority_label_low": "Bassa",
-        "priority_badge_title_prefix": "Priorità:"
+        "priority_badge_title_prefix": "Priorità:",
+        "calendar_today": "Oggi",
+        "calendar_close": "Chiudi",
+        "monthNames": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+        "weekdayNames": ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa"]
         },
         "ja": {
         "input_add_placeholder": "新しいタスクを追加 ...",
@@ -149,7 +169,11 @@
         "priority_label_high": "高",
         "priority_label_medium": "中",
         "priority_label_low": "低",
-        "priority_badge_title_prefix": "優先度:"
+        "priority_badge_title_prefix": "優先度:",
+        "calendar_today": "今日",
+        "calendar_close": "閉じる",
+        "monthNames": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+        "weekdayNames": ["日", "月", "火", "水", "木", "金", "土"]
         },
         "ko": {
         "input_add_placeholder": "새 작업을 추가 ...",
@@ -172,7 +196,11 @@
         "priority_label_high": "높음",
         "priority_label_medium": "보통",
         "priority_label_low": "낮음",
-        "priority_badge_title_prefix": "우선순위:"
+        "priority_badge_title_prefix": "우선순위:",
+        "calendar_today": "오늘",
+        "calendar_close": "닫기",
+        "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+        "weekdayNames": ["일", "월", "화", "수", "목", "금", "토"]
         },
         "ru": {
         "input_add_placeholder": "Добавьте новую задачу ...",
@@ -195,7 +223,11 @@
         "priority_label_high": "Высокий",
         "priority_label_medium": "Средний",
         "priority_label_low": "Низкий",
-        "priority_badge_title_prefix": "Приоритет:"
+        "priority_badge_title_prefix": "Приоритет:",
+        "calendar_today": "Сегодня",
+        "calendar_close": "Закрыть",
+        "monthNames": ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+        "weekdayNames": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
         },
         "sv": {
         "input_add_placeholder": "Lägg till en ny uppgift ...",
@@ -218,7 +250,11 @@
         "priority_label_high": "Hög",
         "priority_label_medium": "Medel",
         "priority_label_low": "Låg",
-        "priority_badge_title_prefix": "Prioritet:"
+        "priority_badge_title_prefix": "Prioritet:",
+        "calendar_today": "Idag",
+        "calendar_close": "Stäng",
+        "monthNames": ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"],
+        "weekdayNames": ["Sö", "Må", "Ti", "On", "To", "Fr", "Lö"]
         },
         "th": {
         "input_add_placeholder": "เพิ่มงานใหม่ ...",
@@ -241,7 +277,11 @@
         "priority_label_high": "สูง",
         "priority_label_medium": "ปานกลาง",
         "priority_label_low": "ต่ำ",
-        "priority_badge_title_prefix": "ลำดับความสำคัญ:"
+        "priority_badge_title_prefix": "ลำดับความสำคัญ:",
+        "calendar_today": "วันนี้",
+        "calendar_close": "ปิด",
+        "monthNames": ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"],
+        "weekdayNames": ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส"]
         },
         "uk": {
         "input_add_placeholder": "Додайте нове завдання ...",
@@ -264,7 +304,11 @@
         "priority_label_high": "Високий",
         "priority_label_medium": "Середній",
         "priority_label_low": "Низький",
-        "priority_badge_title_prefix": "Пріоритет:"
+        "priority_badge_title_prefix": "Пріоритет:",
+        "calendar_today": "Сьогодні",
+        "calendar_close": "Закрити",
+        "monthNames": ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"],
+        "weekdayNames": ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
         }
     }
 }

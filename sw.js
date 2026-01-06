@@ -1,4 +1,4 @@
-const CACHE_NAME = 'todo-v9';
+const CACHE_NAME = 'todo-v20';
 
 self.addEventListener('install', (e) => {
   self.skipWaiting();
@@ -8,7 +8,12 @@ self.addEventListener('install', (e) => {
         '/',
         '/index.html',
         '/style.css',
-        '/app.js',
+        '/js/app.js',
+        '/js/i18n.js',
+        '/js/storage.js',
+        '/js/calendar.js',
+        '/js/todos.js',
+        '/js/ui.js',
         '/manifest.json',
         '/favicon.ico',
         '/translations.json',
