@@ -714,6 +714,22 @@ form button:hover {
 
 /* Responsive design */
 
+@media (max-width: 480px) {
+    .todo-app {
+        padding-top: 2.2rem;
+    }
+
+    .title-section {
+        padding-top: 0.4rem;
+    }
+
+    .language-menu-wrapper {
+        top: 0.4rem;
+        right: 0.4rem;
+    }
+
+}
+
 @media (max-width: 768px) {
     :root {
         --fs-h1: 2.25rem;

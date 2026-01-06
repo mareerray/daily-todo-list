@@ -112,11 +112,11 @@ function applyTranslations() {
             const isMed = dot.classList.contains('medium');
             const isLow = dot.classList.contains('low');
             if (isHigh) {
-                item.innerHTML = `<span class="legend-dot high"></span> <strong>${t('legend_high_label')}</strong> ${t('legend_high_desc')}`;
+                item.innerHTML = `<span class="legend-dot high"></span> ${t('legend_high_desc')}`;
             } else if (isMed) {
-                item.innerHTML = `<span class="legend-dot medium"></span> <strong>${t('legend_medium_label')}</strong> ${t('legend_medium_desc')}`;
+                item.innerHTML = `<span class="legend-dot medium"></span> ${t('legend_medium_desc')}`;
             } else if (isLow) {
-                item.innerHTML = `<span class="legend-dot low"></span> <strong>${t('legend_low_label')}</strong> ${t('legend_low_desc')}`;
+                item.innerHTML = `<span class="legend-dot low"></span> ${t('legend_low_desc')}`;
             }
         });
     }
