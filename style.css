@@ -149,10 +149,10 @@ header {
 .language-button {
     /* background: rgba(255, 255, 255, 0.1); */
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 0.5px solid rgba(255, 255, 255, 0.18);
     color: var(--clr-light);
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
@@ -170,7 +170,7 @@ header {
 
 .language-dropdown {
     position: absolute;
-    top: 44px;
+    top: 38px;
     right: 0;
     background: rgba(139, 137, 137, 0.95);
     color: var(--clr-light);
