@@ -12,10 +12,10 @@
     --ff-secondary: 'Source Code Pro', monospace;
 
     --fw-reg: 300;
-    --fw-bold: 900;
+    --fw-bold: 600;
 
     --clr-light: rgba(255, 255, 255, 0.915);
-    --clr-dark: #303030;
+    --clr-dark: #3c3939;
     --clr-blue: #667eea;
 
     --clr-btn: #c74927;
@@ -59,6 +59,7 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
+    position: relative;
 }
 
 /* HEADER styling */
@@ -138,16 +139,79 @@ header {
     flex-wrap: nowrap;
 }
 
+/* Language icon-only menu */
+.language-menu-wrapper {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+}
+
+.language-button {
+    /* background: rgba(255, 255, 255, 0.1); */
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--clr-light);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.language-button:hover {
+    background: var(--clr-btn-accent);
+    border-color: var(--clr-btn-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 111, 71, 0.3);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 44px;
+    right: 0;
+    background: rgba(139, 137, 137, 0.95);
+    color: var(--clr-light);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    border: 1px solid rgba(0,0,0,0.1);
+    min-width: 160px;
+    padding: 0.4rem;
+    backdrop-filter: blur(6px);
+    z-index: 10;
+}
+
+.language-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.language-item:hover {
+    background: rgba(0,0,0,0.06);
+}
+
+.language-item.active {
+    background: var(--clr-light);
+    color: var(--clr-btn-accent);
+    font-weight: 600;
+}
+
 .date-selector {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    /* background: rgba(255, 255, 255, 0.08); */
     padding: 0.8rem 1rem;
     border-radius: 12px;
-    /* border: 1px solid rgba(255, 255, 255, 0.15); */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    /* backdrop-filter: blur(8px); */
 }
 
 .date-nav-btn {
@@ -680,6 +744,7 @@ form button:hover {
         gap: 1rem;
         flex-wrap: nowrap;
     }
+
 
     .date-selector {
         width: 100%;

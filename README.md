@@ -35,6 +35,12 @@ A modern, responsive todo list application built with vanilla JavaScript, featur
 - Glass morphism UI with gradient accents
 - Smooth animations and transitions
 
+🌐 **Language Options**
+- Built-in language selector (English, ไทย, Español, Svenska, Русский, Українська, Suomi, Deutsch, Italiano)
+- Auto-detects your browser language on first load
+- Persists your choice in localStorage
+- Translates UI labels, messages, and date formatting
+
 ## Technologies Used
 
 - **HTML5** - Structure
@@ -52,6 +58,7 @@ A modern, responsive todo list application built with vanilla JavaScript, featur
 5. **Filter Tasks**: Use the dropdown to filter by status or priority
 6. **Sort Tasks**: Click the "Priority" button to view active tasks sorted by priority
 7. **Navigate Dates**: Tasks are automatically organized by date, allowing you to plan ahead or review past tasks
+8. **Change Language**: Use the language dropdown in the header to switch UI language. Your choice is remembered.
 
 ## Project Structure
 
@@ -60,6 +67,7 @@ My-ToDo-List/
 ├── index.html      # Main HTML structure
 ├── style.css       # Styles and responsive design
 ├── app.js          # Application logic
+├── sw.js           # Service worker for offline caching
 └── README.md       # Project documentation
 ```
 
