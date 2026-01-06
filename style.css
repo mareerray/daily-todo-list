@@ -769,7 +769,7 @@ form button:hover {
 
     .date-picker {
         flex: 1;
-        min-width: 120px;
+        /* min-width: 120px; */
     }
 
     .selected-date-display {
