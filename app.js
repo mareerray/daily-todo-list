@@ -29,6 +29,8 @@ function detectInitialLang() {
     if (nav.startsWith('fi')) return 'fi';
     if (nav.startsWith('de')) return 'de';
     if (nav.startsWith('it')) return 'it';
+    if (nav.startsWith('ja')) return 'ja';
+    if (nav.startsWith('ko')) return 'ko';
     return 'en';
 }
 
