@@ -26,6 +26,7 @@ function initUI() {
         if (e.target.id === 'addDialog') closeAddDialog();
     });
     document.getElementById('dialogAddButton').addEventListener('click', addTodoFromDialog);
+    document.getElementById('addDialogDateBtn').addEventListener('click', () => openCalendar('dialog'));
 }
 
 function toggleLanguageMenu() {
@@ -140,6 +141,8 @@ function applyTranslations() {
 function openAddDialog() {
     document.getElementById('addDialog').hidden = false;
     document.getElementById('addDialogDate').value = formatDateKey(getSelectedDate());
+    document.getElementById('addDialogDateText').textContent = todayKey;
+    document.getElementById('addDialogDate_value').value = todayKey;
 }
 
 function closeAddDialog() {

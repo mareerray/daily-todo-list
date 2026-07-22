@@ -2,6 +2,7 @@
 
 let selectedDate = new Date();
 let currentCalendarMonth = new Date();
+let calendarMode = 'home'; // 'home' or 'dialog'
 
 // DOM Elements
 const calendarBtn = document.getElementById('calendarBtn');
@@ -29,7 +30,8 @@ function initCalendar() {
     });
 }
 
-function openCalendar() {
+function openCalendar(mode = 'home') {
+    calendarMode = mode;
     currentCalendarMonth = new Date(selectedDate);
     renderCalendar();
     calendarOverlay.classList.add('active');
@@ -123,6 +125,12 @@ function renderCalendar() {
 }
 
 function selectDate(date) {
+    if (calendarMode === 'dialog') {
+        document.getElementById('addDialogDateText').textContent = formatDateKey(date);
+        document.getElementById('addDialogDate_value').value = formatDateKey(date);
+        closeCalendar();
+        return;
+    }
     selectedDate = new Date(date);
     updateDateDisplay();
     displayTodosForDate(selectedDate);

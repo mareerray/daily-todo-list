@@ -82,7 +82,7 @@ function addTodo(event) {
 function addTodoFromDialog() {
     const input = document.getElementById('dialogTodoInput');
     const prioritySelect = document.getElementById('dialogPrioritySelect');
-    const dateInput = document.getElementById('addDialogDate');
+    const dateInput = document.getElementById('addDialogDate_value');
 
     if (input.value.trim() === '') return;
 

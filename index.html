@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="css/dialog.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        #addDialogDateBtn {
+            width: 100%;
+        }
+    </style>
     <title>Daily Todo List</title>
 </head>
 
@@ -102,7 +107,10 @@
             <div class="dialog-box">
                 <h3 class="dialog-title">Add a task</h3>
 
-                <input type="date" id="addDialogDate" class="dialog-date-input date-picker" />
+                <button type="button" id="addDialogDateBtn" class="date-picker">
+                    <i class="bi bi-calendar3"></i> <span id="addDialogDateText">Select date</span>
+                </button>
+                <input type="hidden" id="addDialogDate_value" />
 
                 <div class="input-group">
                     <label for="dialogPrioritySelect" class="dialog-label">Choose priority</label>
@@ -123,6 +131,7 @@
             </div>
         </div>
     </div>
+
     <!-- TODO LIST SECTION -->
     <div class="todo-container">
         <ul class="todo-list"></ul>

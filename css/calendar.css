@@ -100,8 +100,8 @@
 }
 
 .calendar-day.today {
-    background: var(--clr-btn-accent);
-    border-color: var(--clr-btn-accent);
+    border: 2px solid var(--clr-btn-accent);
+    background: transparent;
     font-weight: bold;
 }
 
