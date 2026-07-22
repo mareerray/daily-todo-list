@@ -21,6 +21,11 @@ function initUI() {
             closeCalendar();
         }
     });
+    document.getElementById('closeAddDialog').addEventListener('click', closeAddDialog);
+    document.getElementById('addDialog').addEventListener('click', (e) => {
+        if (e.target.id === 'addDialog') closeAddDialog();
+    });
+    document.getElementById('dialogAddButton').addEventListener('click', addTodoFromDialog);
 }
 
 function toggleLanguageMenu() {
@@ -131,6 +136,16 @@ function applyTranslations() {
     if (calendarCloseBtn) calendarCloseBtn.textContent = t('calendar_close');
 }
 
+// Open and close add todo dialog
+function openAddDialog() {
+    document.getElementById('addDialog').hidden = false;
+    document.getElementById('addDialogDate').value = formatDateKey(getSelectedDate());
+}
+
+function closeAddDialog() {
+    document.getElementById('addDialog').hidden = true;
+}
+
 // Bottom Navigation
 function initBottomNav() {
     const navItems = document.querySelectorAll('.nav-item');
@@ -141,6 +156,11 @@ function initBottomNav() {
 
             if (view === 'language') {
                 toggleLanguageMenu();
+                return;
+            }
+
+            if (view === 'add') {
+                openAddDialog();
                 return;
             }
 

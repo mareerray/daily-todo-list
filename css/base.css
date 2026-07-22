@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom properties */
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 600;
+
+    --clr-light: rgba(255, 255, 255, 0.915);
+    --clr-dark: #3c3939;
+    --clr-blue: #667eea;
+
+    --clr-btn: #c74927;
+    --clr-btn-accent: #ff6f47;
+
+    --fs-h1: 3rem;
+    --fs-icon: 1.3rem;
+    --fs-body: 1rem;
+    --fs-label: 0.9rem;
+
+
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
+}
+
+/* Global styling */
+
+html {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 2.5rem 1.25rem 3rem;
+    background-color: #303030;
+    color: var(--clr-light);
+    font-family: var(--ff-primary);
+}

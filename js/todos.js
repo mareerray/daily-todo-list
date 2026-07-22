@@ -79,6 +79,26 @@ function addTodo(event) {
     prioritySelect.value = 'medium';
 }
 
+function addTodoFromDialog() {
+    const input = document.getElementById('dialogTodoInput');
+    const prioritySelect = document.getElementById('dialogPrioritySelect');
+    const dateInput = document.getElementById('addDialogDate');
+
+    if (input.value.trim() === '') return;
+
+    const todoObj = {
+        text: input.value,
+        priority: prioritySelect.value,
+        dueDate: dateInput.value,
+        completed: false
+    };
+    saveTodoToStorage(todoObj);
+
+    input.value = '';
+    closeAddDialog();
+    displayTodosForDate(getSelectedDate());
+}
+
 function deleteCheck(e) {
     const item = e.target;
     

@@ -11,7 +11,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/todo-form.css">
+    <link rel="stylesheet" href="css/todo-list.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/dialog.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <title>Daily Todo List</title>
 </head>
 
@@ -87,6 +95,32 @@
             <span class="legend-item"><span class="legend-dot high"></span> Do it now</span>
             <span class="legend-item"><span class="legend-dot medium"></span> Finish soon</span>
             <span class="legend-item"><span class="legend-dot low"></span> Plan later</span>
+        </div>
+
+        <!-- TASK DIALOG -->
+        <div id="addDialog" class="dialog-overlay" hidden>
+            <div class="dialog-box">
+                <h3 class="dialog-title">Add a task</h3>
+
+                <input type="date" id="addDialogDate" class="dialog-date-input date-picker" />
+
+                <div class="input-group">
+                    <label for="dialogPrioritySelect" class="dialog-label">Choose priority</label>
+                    <select id="dialogPrioritySelect" class="priority-select" title="Priority">
+                        <option value="high">🔴 High</option>
+                        <option value="medium" selected>🟡 Medium</option>
+                        <option value="low">🔵 Low</option>
+                    </select>
+                    <input type="text" id="dialogTodoInput" class="todo-input" placeholder="Add a new task..."
+                        maxlength="50">
+                    <button id="dialogAddButton" type="button" class="todo-button" aria-label="Add task"
+                        title="Add task">
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </button>
+                </div>
+
+                <button id="closeAddDialog" type="button" class="dialog-cancel">Cancel</button>
+            </div>
         </div>
     </div>
     <!-- TODO LIST SECTION -->

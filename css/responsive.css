@@ -1,0 +1,330 @@
+/* Responsive design */
+
+@media (max-width: 480px) {
+    .todo-app {
+        padding-top: 2.2rem;
+    }
+
+    .title-section {
+        padding-top: 0.4rem;
+    }
+
+    .language-menu-wrapper {
+        top: 0.4rem;
+        right: 0.4rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    :root {
+        --fs-h1: 2.25rem;
+    }
+
+    body {
+        padding: 1rem 0.75rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .todo-app {
+        padding: 1.25rem;
+    }
+
+    .title-section {
+        margin-bottom: 0.8rem;
+    }
+
+    .subtitle-section {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: nowrap;
+    }
+
+
+    .date-selector {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .date-picker {
+        flex: 1;
+        /* min-width: 120px; */
+    }
+
+    .selected-date-display {
+        font-size: 0.95rem;
+        min-width: auto;
+        padding: 0;
+    }
+
+    .input-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    .input-group {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .priority-legend {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .todo-input {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .priority-select {
+        font-size: 0.8rem;
+        line-height: 1.8;
+        flex: 0 0 auto;
+        max-width: 80px;
+        min-width: 80px;
+        padding: 0.4rem 0.3rem;
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+        border-left: none;
+    }
+
+    .todo-button {
+        border-radius: 0;
+        padding: 1rem 1.5rem;
+        font-size: var(--fs-icon);
+        flex-shrink: 0;
+    }
+
+    select {
+        padding: 0.8rem 0.5rem;
+        font-size: var(--fs-label);
+    }
+
+    option {
+        font-size: var(--fs-label);
+        padding: 0.5rem;
+    }
+
+    .todo {
+        grid-template-columns: auto 1fr 48px 48px;
+    }
+
+    .filter-sort-container {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 0.3rem;
+    }
+
+    .select {
+        min-width: auto;
+        flex: 1;
+    }
+
+    select.filter-todo {
+        width: 100%;
+        padding: 0.8rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .sort-btn {
+        padding: 0.8rem 0.5rem;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+    }
+
+}
+
+/* Responsive MOBILE */
+
+@media (max-width: 365px) {
+    header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .date-selector {
+        width: 100%;
+        padding: 0.4rem 0.3rem;
+        gap: 0.3rem;
+        justify-content: space-between;
+    }
+
+    .date-nav-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+        padding: 0;
+    }
+
+    .date-picker {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .selected-date-display {
+        font-size: 0.8rem;
+        min-width: auto;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    .title-section {
+        margin-bottom: 0.5rem;
+    }
+
+    .logo-title {
+        font-size: 1.8rem;
+        letter-spacing: 0.1em;
+    }
+
+    .logo-subtitle {
+        font-size: 0.65rem;
+    }
+
+    .subtitle-section {
+        gap: 0.4rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+
+    .subtitle-with-icons {
+        gap: 0.3rem;
+    }
+
+    .priority-legend {
+        gap: 0.3rem;
+        font-size: 0.6rem;
+        margin: 0.6rem 0 0;
+        padding: 0.3rem 0.3rem;
+    }
+
+    .legend-item {
+        gap: 0.15rem;
+    }
+
+    .legend-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .legend-dot.high {
+        background: #f44336;
+    }
+
+    .legend-dot.medium {
+        background: #ffc107;
+    }
+
+    .legend-dot.low {
+        background: #2196f3;
+    }
+
+    .todo-input::placeholder {
+        font-size: 0.9rem;
+    }
+
+    .social-icons a {
+        width: 18px;
+        height: 18px;
+    }
+
+    .todo-input {
+        padding: 0 0.3rem;
+        font-size: 0.75rem;
+        min-width: 0;
+        flex: 1;
+        height: 2.5rem;
+    }
+
+    .todo-button {
+        padding: 0 0.6rem;
+        flex-shrink: 0;
+        font-size: 1rem;
+    }
+
+    .priority-select {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.2rem;
+        min-width: 75px;
+        max-width: 75px;
+        flex-shrink: 0;
+    }
+
+    select {
+        padding: 0.8rem 0.5rem;
+        font-size: var(--fs-label);
+    }
+
+    .input-container {
+        gap: 4px;
+        flex-direction: row;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    .input-group {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        border-radius: 12px;
+        overflow: hidden;
+        min-width: 0;
+        flex: 1;
+        gap: 0;
+        height: 2.5rem;
+    }
+
+    .filter-sort-container {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .select {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    select.filter-todo {
+        width: 100%;
+    }
+
+    .sort-btn {
+        flex: 1;
+        padding: 0.7rem 0.5rem;
+        font-size: var(--fs-label);
+    }
+
+    .todo-app {
+        padding: 1rem;
+    }
+
+    .trash-btn,
+    .complete-btn {
+        padding: 0.3rem 0.4rem;
+        font-size: var(--fs-icon);
+    }
+
+    .priority-indicator {
+        width: 28px;
+        height: 28px;
+        font-size: var(--fs-label);
+    }
+}
