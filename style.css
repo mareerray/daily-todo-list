@@ -27,8 +27,8 @@
     --fs-label: 0.9rem;
 
 
-    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
-    0.125em 0.125em 0.25em rgba(0,0,0,.15);
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, .25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, .15);
 }
 
 /* Global styling */
@@ -56,6 +56,7 @@ body {
     box-shadow: var(--bs);
     padding: 2rem;
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -91,7 +92,7 @@ body {
     font-family: var(--ff-secondary);
     font-weight: var(--fw-reg);
     letter-spacing: .1em;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
     margin: 0;
 }
 
@@ -114,7 +115,7 @@ body {
     justify-content: center;
     width: 20px;
     height: 20px;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -139,48 +140,42 @@ header {
     flex-wrap: nowrap;
 }
 
-/* Language icon-only menu */
+/* LANGUAGE icon-only menu */
+
 .language-menu-wrapper {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
 .language-button {
-    /* background: rgba(255, 255, 255, 0.1); */
     background: transparent;
-    border: 0.5px solid rgba(255, 255, 255, 0.18);
-    color: var(--clr-light);
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    cursor: pointer;
+    border: none;
+    color: inherit;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 4px;
+    font-size: 15px;
+    cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.language-button:hover {
-    background: var(--clr-btn-accent);
-    border-color: var(--clr-btn-accent);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255, 111, 71, 0.3);
 }
 
 .language-dropdown {
     position: absolute;
-    top: 38px;
+    bottom: 45px;
     right: 0;
     background: rgba(139, 137, 137, 0.95);
     color: var(--clr-light);
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     min-width: 160px;
     padding: 0.4rem;
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
-    z-index: 10;
+    z-index: 1001;
 }
 
 .language-item {
@@ -196,7 +191,7 @@ header {
 }
 
 .language-item:hover {
-    background: rgba(0,0,0,0.06);
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .language-item.active {
@@ -204,6 +199,8 @@ header {
     color: var(--clr-btn-accent);
     font-weight: 600;
 }
+
+/* Date selector */
 
 .date-selector {
     display: flex;
@@ -381,7 +378,7 @@ header {
     padding: 0.5rem 0.4rem;
     font-size: var(--fs-label);
     border: none;
-    border-right: 1px solid rgba(0,0,0,0.05);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
     background: transparent;
     color: var(--clr-btn-accent);
     cursor: pointer;
@@ -411,7 +408,7 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 0 12px 12px 0;
-    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
 .todo-button i {
@@ -435,7 +432,7 @@ header {
     overflow: hidden;
     min-width: 10rem;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 select {
@@ -452,7 +449,7 @@ select {
     /* width: 100%; */
     cursor: pointer;
     padding: 1rem;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     font-weight: var(--fw-bold);
 }
 
@@ -478,7 +475,7 @@ option {
 .select:hover::after {
     background: white;
     color: var(--clr-btn-accent);
-} 
+}
 
 .filter-sort-container {
     display: flex;
@@ -497,7 +494,7 @@ option {
 }
 
 select.filter-todo {
-    width: 200px; 
+    width: 200px;
 }
 
 .sort-btn {
@@ -510,12 +507,12 @@ select.filter-todo {
     cursor: pointer;
     font-weight: 600;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .sort-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
 }
 
 .sort-btn:active {
@@ -528,7 +525,8 @@ select.filter-todo {
 
 /* Form styling */
 
-form input, form button {
+form input,
+form button {
     font-size: var(--fs-body);
     height: 3rem;
     border: none;
@@ -569,7 +567,7 @@ form button:hover {
     align-items: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.4s ease;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     border-left: 6px solid var(--clr-btn-accent);
 }
 
@@ -580,7 +578,7 @@ form button:hover {
     padding: 0.5rem 0.4rem;
     justify-content: center;
     align-items: center;
-    background: rgba(0,0,0,0.02);
+    background: rgba(0, 0, 0, 0.02);
 }
 
 .priority-indicator {
@@ -593,7 +591,7 @@ form button:hover {
     font-size: var(--fs-label);
     font-weight: bold;
     color: white;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .priority-low {
@@ -609,15 +607,18 @@ form button:hover {
 .priority-high {
     background: linear-gradient(135deg, #f44336, #d32f2f);
     box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
-    animation: pulse 1.5s ease-in-out infinite;
     -webkit-animation: pulse 1.5s ease-in-out infinite;
+    animation: pulse 1.5s ease-in-out infinite;
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
         box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
     }
+
     50% {
         transform: scale(1.15);
         box-shadow: 0 4px 16px rgba(244, 67, 54, 0.6);
@@ -625,10 +626,13 @@ form button:hover {
 }
 
 @-webkit-keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         -webkit-transform: scale(1);
         box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
     }
+
     50% {
         -webkit-transform: scale(1.15);
         box-shadow: 0 4px 16px rgba(244, 67, 54, 0.6);
@@ -636,8 +640,8 @@ form button:hover {
 }
 
 .todo.completed .priority-high {
-    animation: none;
     -webkit-animation: none;
+    animation: none;
     box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
 }
 
@@ -652,7 +656,8 @@ form button:hover {
     min-width: 0;
 }
 
-.trash-btn, .complete-btn {
+.trash-btn,
+.complete-btn {
     background: transparent;
     color: var(--clr-btn-accent);
     border: none;
@@ -682,7 +687,7 @@ form button:hover {
 
 .todo:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.14);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
 }
 
 .todo-item {
@@ -811,7 +816,7 @@ form button:hover {
         max-width: 80px;
         min-width: 80px;
         padding: 0.4rem 0.3rem;
-        border-right: 1px solid rgba(0,0,0,0.05);
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
         border-left: none;
     }
 
@@ -1030,7 +1035,8 @@ form button:hover {
         padding: 1rem;
     }
 
-    .trash-btn, .complete-btn {
+    .trash-btn,
+    .complete-btn {
         padding: 0.3rem 0.4rem;
         font-size: var(--fs-icon);
     }
@@ -1042,6 +1048,43 @@ form button:hover {
     }
 }
 
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #1e1e1e;
+    padding: 8px 0;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 15px;
+    font-family: var(--ff-secondary);
+    gap: 4px;
+}
+
+.nav-item:hover {
+    color: var(--clr-btn-accent);
+    transform: translateY(-2px);
+    /* box-shadow: 0 6px 16px rgba(255, 111, 71, 0.3); */
+}
+
+.nav-item.active {
+    color: var(--clr-btn-accent);
+}
+
 /* CALENDAR OVERLAY */
 .calendar-overlay {
     display: none;
@@ -1051,6 +1094,7 @@ form button:hover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     z-index: 1000;
     justify-content: center;
@@ -1068,6 +1112,7 @@ form button:hover {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -1092,6 +1137,7 @@ form button:hover {
         transform: translateY(30px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;

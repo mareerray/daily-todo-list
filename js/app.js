@@ -8,6 +8,7 @@ async function initializeApp() {
     initUI();
     initCalendar();
     initTodos();
+    initBottomNav();
     
     // Apply initial translations
     applyTranslations();

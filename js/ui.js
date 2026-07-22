@@ -24,6 +24,7 @@ function initUI() {
 }
 
 function toggleLanguageMenu() {
+    if (event) event.stopPropagation();
     if (!languageMenu || !languageButton) return;
     const willShow = !!languageMenu.hidden;
     languageMenu.hidden = !willShow;
@@ -128,4 +129,30 @@ function applyTranslations() {
     const calendarCloseBtn = document.getElementById('calendarCloseBtn');
     if (calendarTodayBtn) calendarTodayBtn.textContent = t('calendar_today');
     if (calendarCloseBtn) calendarCloseBtn.textContent = t('calendar_close');
+}
+
+// Bottom Navigation
+function initBottomNav() {
+    const navItems = document.querySelectorAll('.nav-item');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const view = item.dataset.view;
+
+            if (view === 'language') {
+                toggleLanguageMenu();
+                return;
+            }
+
+            navItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+            showView(view);
+        });
+    });
+}
+
+function showView(view) {
+    document.querySelectorAll('.app-view').forEach(v => v.style.display = 'none');
+    const target = document.getElementById(`view-${view}`);
+    if (target) target.style.display = 'block';
 }
