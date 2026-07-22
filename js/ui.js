@@ -73,7 +73,7 @@ function applyTranslations() {
     inputEls.forEach(inputEl => {
         inputEl.placeholder = t('input_add_placeholder');
     });
-    
+
     // Filter options
     const filterEl = document.querySelector('.filter-todo');
     if (filterEl) {
@@ -164,6 +164,7 @@ function openAddDialog() {
     document.getElementById('addDialogDateText').textContent = todayKey;
     document.getElementById('addDialogDate_value').value = todayKey;
 }
+
 
 function closeAddDialog() {
     document.getElementById('addDialog').hidden = true;

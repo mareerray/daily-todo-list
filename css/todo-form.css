@@ -80,8 +80,8 @@
 
 .todo-button:hover {
     transform: translateY(-1px);
-    background: var(--clr-light);
-    color: var(--clr-btn-accent);
+    background: var(--clr-hover);
+    color: var(--clr-btn-light);
 }
 
 .todo-button:active {
@@ -136,8 +136,8 @@ option {
 }
 
 .select:hover::after {
-    background: white;
-    color: var(--clr-btn-accent);
+    background: var(--clr-hover);
+    color: var(--clr-btn-light);
 }
 
 .filter-sort-container {
@@ -202,6 +202,6 @@ form button {
 }
 
 form button:hover {
-    background: #d88771;
-    color: white;
+    background: var(--clr-hover);
+    color: var(--clr-btn-light);
 }
