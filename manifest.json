@@ -3,7 +3,7 @@
     "short_name": "DailyTodo",
     "start_url": "/daily-todo-list/",
     "display": "standalone",
-    "background_color": "#303030",
+    "background_color": "#000000",
     "theme_color": "#ff6f47",
     "icons": [
     {
