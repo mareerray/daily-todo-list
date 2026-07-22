@@ -69,9 +69,11 @@ function setActiveLanguageItem() {
 
 function applyTranslations() {
     // Input placeholder
-    const inputEl = document.querySelector('.todo-input');
-    if (inputEl) inputEl.placeholder = t('input_add_placeholder');
-
+    const inputEls = document.querySelectorAll('.todo-input');
+    inputEls.forEach(inputEl => {
+        inputEl.placeholder = t('input_add_placeholder');
+    });
+    
     // Filter options
     const filterEl = document.querySelector('.filter-todo');
     if (filterEl) {
@@ -94,8 +96,8 @@ function applyTranslations() {
     if (languageButton) languageButton.title = t('language_hint');
 
     // Priority select labels and titles
-    const prioritySelect = document.querySelector('.priority-select');
-    if (prioritySelect) {
+    const prioritySelects = document.querySelectorAll('.priority-select');
+    prioritySelects.forEach(prioritySelect => {
         prioritySelect.querySelectorAll('option').forEach(opt => {
             if (opt.value === 'high') {
                 opt.textContent = `🔴 ${t('priority_label_high')}`;
@@ -108,7 +110,7 @@ function applyTranslations() {
                 opt.title = `${t('priority_label_low')} - ${t('legend_low_desc')}`;
             }
         });
-    }
+    });
 
     // Priority legend
     const legend = document.querySelector('.priority-legend');
@@ -135,6 +137,24 @@ function applyTranslations() {
     const calendarCloseBtn = document.getElementById('calendarCloseBtn');
     if (calendarTodayBtn) calendarTodayBtn.textContent = t('calendar_today');
     if (calendarCloseBtn) calendarCloseBtn.textContent = t('calendar_close');
+
+    // Dialog translations
+    const dialogTitle = document.getElementById('dialogTitle');
+    if (dialogTitle) dialogTitle.textContent = t('dialog_add_task_title');
+
+    const dialogPriorityLabel = document.getElementById('dialogPriorityLabel');
+    if (dialogPriorityLabel) dialogPriorityLabel.textContent = t('dialog_choose_priority');
+
+    const dialogAddBtn = document.getElementById('dialogAddButton');
+    if (dialogAddBtn) dialogAddBtn.title = t('dialog_add_button');
+
+    const dialogCancelBtn = document.getElementById('closeAddDialog');
+    if (dialogCancelBtn) dialogCancelBtn.textContent = t('dialog_cancel_button');
+
+    const dialogDateText = document.getElementById('addDialogDateText');
+    if (dialogDateText && !dialogDateText.textContent.match(/^\d{4}-\d{2}-\d{2}$/)) {
+        dialogDateText.textContent = t('dialog_select_date');
+    }
 }
 
 // Open and close add todo dialog

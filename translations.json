@@ -38,7 +38,12 @@
         "calendar_today": "Heute",
         "calendar_close": "Schließen",
         "monthNames": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
-        "weekdayNames": ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"]
+        "weekdayNames": ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+        "dialog_add_task_title": "Aufgabe hinzufügen",
+        "dialog_choose_priority": "Priorität wählen",
+        "dialog_select_date": "Datum wählen",
+        "dialog_add_button": "Hinzufügen",
+        "dialog_cancel_button": "Abbrechen"
         },
         "en": {
         "input_add_placeholder": "Add a new task ...",
@@ -65,7 +70,12 @@
         "calendar_today": "Today",
         "calendar_close": "Close",
         "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-        "weekdayNames": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+        "weekdayNames": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+        "dialog_add_task_title": "Add a task",
+        "dialog_choose_priority": "Choose priority",
+        "dialog_select_date": "Select date",
+        "dialog_add_button": "Add task",
+        "dialog_cancel_button": "Cancel"
         },
         "es": {
         "input_add_placeholder": "Agregar una nueva tarea ...",
@@ -92,7 +102,12 @@
         "calendar_today": "Hoy",
         "calendar_close": "Cerrar",
         "monthNames": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-        "weekdayNames": ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá"]
+        "weekdayNames": ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá"],
+        "dialog_add_task_title": "Agregar una tarea",
+        "dialog_choose_priority": "Elegir prioridad",
+        "dialog_select_date": "Seleccionar fecha",
+        "dialog_add_button": "Agregar",
+        "dialog_cancel_button": "Cancelar"
         },
         "fi": {
         "input_add_placeholder": "Lisää uusi tehtävä ...",
@@ -119,7 +134,12 @@
         "calendar_today": "Tänään",
         "calendar_close": "Sulje",
         "monthNames": ["Tammikuu", "Helmikuu", "Maaliskuu", "Huhtikuu", "Toukokuu", "Kesäkuu", "Heinäkuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"],
-        "weekdayNames": ["Su", "Ma", "Ti", "Ke", "To", "Pe", "La"]
+        "weekdayNames": ["Su", "Ma", "Ti", "Ke", "To", "Pe", "La"],
+        "dialog_add_task_title": "Lisää tehtävä",
+        "dialog_choose_priority": "Valitse prioriteetti",
+        "dialog_select_date": "Valitse päivä",
+        "dialog_add_button": "Lisää",
+        "dialog_cancel_button": "Peruuta"
         },
         "it": {
         "input_add_placeholder": "Aggiungi una nuova attività ...",
@@ -146,7 +166,12 @@
         "calendar_today": "Oggi",
         "calendar_close": "Chiudi",
         "monthNames": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
-        "weekdayNames": ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa"]
+        "weekdayNames": ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa"],
+        "dialog_add_task_title": "Aggiungi un'attività",
+        "dialog_choose_priority": "Scegli priorità",
+        "dialog_select_date": "Seleziona data",
+        "dialog_add_button": "Aggiungi",
+        "dialog_cancel_button": "Annulla"
         },
         "ja": {
         "input_add_placeholder": "新しいタスクを追加 ...",
@@ -173,7 +198,12 @@
         "calendar_today": "今日",
         "calendar_close": "閉じる",
         "monthNames": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
-        "weekdayNames": ["日", "月", "火", "水", "木", "金", "土"]
+        "weekdayNames": ["日", "月", "火", "水", "木", "金", "土"],
+        "dialog_add_task_title": "タスクを追加",
+        "dialog_choose_priority": "優先度を選択",
+        "dialog_select_date": "日付を選択",
+        "dialog_add_button": "追加",
+        "dialog_cancel_button": "キャンセル"
         },
         "ko": {
         "input_add_placeholder": "새 작업을 추가 ...",
@@ -200,7 +230,12 @@
         "calendar_today": "오늘",
         "calendar_close": "닫기",
         "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-        "weekdayNames": ["일", "월", "화", "수", "목", "금", "토"]
+        "weekdayNames": ["일", "월", "화", "수", "목", "금", "토"],
+        "dialog_add_task_title": "작업 추가",
+        "dialog_choose_priority": "우선순위 선택",
+        "dialog_select_date": "날짜 선택",
+        "dialog_add_button": "추가",
+        "dialog_cancel_button": "취소"
         },
         "ru": {
         "input_add_placeholder": "Добавьте новую задачу ...",
@@ -227,7 +262,12 @@
         "calendar_today": "Сегодня",
         "calendar_close": "Закрыть",
         "monthNames": ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
-        "weekdayNames": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
+        "weekdayNames": ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        "dialog_add_task_title": "Добавить задачу",
+        "dialog_choose_priority": "Выберите приоритет",
+        "dialog_select_date": "Выберите дату",
+        "dialog_add_button": "Добавить",
+        "dialog_cancel_button": "Отмена"
         },
         "sv": {
         "input_add_placeholder": "Lägg till en ny uppgift ...",
@@ -254,7 +294,12 @@
         "calendar_today": "Idag",
         "calendar_close": "Stäng",
         "monthNames": ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"],
-        "weekdayNames": ["Sö", "Må", "Ti", "On", "To", "Fr", "Lö"]
+        "weekdayNames": ["Sö", "Må", "Ti", "On", "To", "Fr", "Lö"],
+        "dialog_add_task_title": "Lägg till uppgift",
+        "dialog_choose_priority": "Välj prioritet",
+        "dialog_select_date": "Välj datum",
+        "dialog_add_button": "Lägg till",
+        "dialog_cancel_button": "Avbryt"
         },
         "th": {
         "input_add_placeholder": "เพิ่มงานใหม่ ...",
@@ -281,7 +326,12 @@
         "calendar_today": "วันนี้",
         "calendar_close": "ปิด",
         "monthNames": ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"],
-        "weekdayNames": ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส"]
+        "weekdayNames": ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส"],
+        "dialog_add_task_title": "เพิ่มงาน",
+        "dialog_choose_priority": "เลือกลำดับความสำคัญ",
+        "dialog_select_date": "เลือกวันที่",
+        "dialog_add_button": "เพิ่ม",
+        "dialog_cancel_button": "ยกเลิก"
         },
         "uk": {
         "input_add_placeholder": "Додайте нове завдання ...",
@@ -308,7 +358,12 @@
         "calendar_today": "Сьогодні",
         "calendar_close": "Закрити",
         "monthNames": ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"],
-        "weekdayNames": ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
+        "weekdayNames": ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        "dialog_add_task_title": "Додати завдання",
+        "dialog_choose_priority": "Виберіть пріоритет",
+        "dialog_select_date": "Виберіть дату",
+        "dialog_add_button": "Додати",
+        "dialog_cancel_button": "Скасувати"
         }
     }
 }
