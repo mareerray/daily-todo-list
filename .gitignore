@@ -15,3 +15,5 @@ Thumbs.db
 # Environment secrets (if you add any later)
 .env
 .vercel
+
+node_modules/

@@ -27,6 +27,7 @@ function initUI() {
     });
     document.getElementById('dialogAddButton').addEventListener('click', addTodoFromDialog);
     document.getElementById('addDialogDateBtn').addEventListener('click', () => openCalendar('dialog'));
+    document.getElementById('micButton').addEventListener('click', toggleRecording);
 }
 
 function toggleLanguageMenu() {
@@ -160,14 +161,61 @@ function applyTranslations() {
 // Open and close add todo dialog
 function openAddDialog() {
     document.getElementById('addDialog').hidden = false;
-    document.getElementById('addDialogDate').value = formatDateKey(getSelectedDate());
-    document.getElementById('addDialogDateText').textContent = todayKey;
-    document.getElementById('addDialogDate_value').value = todayKey;
+    const todayFormatted = formatDateKey(new Date());
+    document.getElementById('addDialogDate_value').value = todayFormatted;
+    document.getElementById('addDialogDateText').textContent = todayFormatted;
 }
 
 
 function closeAddDialog() {
     document.getElementById('addDialog').hidden = true;
+}
+
+// Speech-to-text recording
+let mediaRecorder;
+let audioChunks = [];
+
+async function toggleRecording() {
+    const micBtn = document.getElementById('micButton');
+
+    if (mediaRecorder && mediaRecorder.state === 'recording') {
+        mediaRecorder.stop();
+        micBtn.classList.remove('recording');
+        return;
+    }
+
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+    mediaRecorder = new MediaRecorder(stream);
+    audioChunks = [];
+
+    mediaRecorder.ondataavailable = (e) => {
+        audioChunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+
+        const reader = new FileReader();
+        reader.readAsDataURL(audioBlob);
+        reader.onloadend = async () => {
+            const base64Audio = reader.result.split(',')[1];
+
+            const response = await fetch('/api/stt', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ audio: base64Audio })
+            });
+
+            console.log('Response status:', response.status);
+            const result = await response.json();
+            console.log('STT Response:', result);
+            document.getElementById('dialogTodoInput').value = result.text || '';
+        };
+    };
+
+    mediaRecorder.start();
+    micBtn.classList.add('recording');
 }
 
 // Bottom Navigation
