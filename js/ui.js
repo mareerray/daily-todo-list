@@ -28,6 +28,7 @@ function initUI() {
     document.getElementById('dialogAddButton').addEventListener('click', addTodoFromDialog);
     document.getElementById('addDialogDateBtn').addEventListener('click', () => openCalendar('dialog'));
     document.getElementById('micButton').addEventListener('click', toggleRecording);
+    document.getElementById('openAddDialogBtn').addEventListener('click', openAddDialog);
 }
 
 function toggleLanguageMenu() {

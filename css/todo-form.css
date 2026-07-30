@@ -5,6 +5,7 @@
     flex-direction: row;
     gap: 8px;
     align-items: center;
+    justify-content: center;
     margin: 2rem 0;
     flex-wrap: wrap;
 }
@@ -60,11 +61,12 @@
 }
 
 .todo-button {
-    padding: 0 1.1rem;
+    padding: 1rem;
     border: none;
     background: var(--clr-btn-accent);
-    /* background: linear-gradient(135deg, var(--clr-btn), var(--clr-btn-accent)); */
     color: white;
+    font-weight: 600;
+    gap: 0.5rem;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
     display: flex;
@@ -142,7 +144,7 @@ option {
 
 .filter-sort-container {
     display: flex;
-    gap: .3rem;
+    gap: .5rem;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
