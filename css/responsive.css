@@ -97,6 +97,7 @@
         padding: 0.4rem 0.3rem;
         border-right: 1px solid rgba(0, 0, 0, 0.05);
         border-left: none;
+        padding-left: 0.8rem;
     }
 
     .todo-button {
@@ -259,7 +260,7 @@
 
     .priority-select {
         font-size: 0.75rem;
-        padding: 0.3rem 0.2rem;
+        padding: 0.3rem 0.5rem;
         min-width: 75px;
         max-width: 75px;
         flex-shrink: 0;
