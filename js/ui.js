@@ -157,6 +157,15 @@ function applyTranslations() {
     if (dialogDateText && !dialogDateText.textContent.match(/^\d{4}-\d{2}-\d{2}$/)) {
         dialogDateText.textContent = t('dialog_select_date');
     }
+
+    // Main "Add Task" button (opens dialog)
+    const openAddDialogBtn = document.getElementById('openAddDialogBtn');
+    if (openAddDialogBtn) {
+        const span = openAddDialogBtn.querySelector('span');
+        if (span) span.textContent = ` ${t('add_task_button')}`;
+        openAddDialogBtn.setAttribute('aria-label', t('add_task_button'));
+        openAddDialogBtn.title = t('add_task_button');
+    }
 }
 
 // Open and close add todo dialog

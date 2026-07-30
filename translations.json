@@ -43,7 +43,8 @@
         "dialog_choose_priority": "Priorität wählen",
         "dialog_select_date": "Datum wählen",
         "dialog_add_button": "Hinzufügen",
-        "dialog_cancel_button": "Abbrechen"
+        "dialog_cancel_button": "Abbrechen",
+        "add_task_button": "Aufgabe hinzufügen"
         },
         "en": {
         "input_add_placeholder": "Add a new task ...",
@@ -75,7 +76,8 @@
         "dialog_choose_priority": "Choose priority",
         "dialog_select_date": "Select date",
         "dialog_add_button": "Add task",
-        "dialog_cancel_button": "Cancel"
+        "dialog_cancel_button": "Cancel",
+        "add_task_button": "Add Task"
         },
         "es": {
         "input_add_placeholder": "Agregar una nueva tarea ...",
@@ -107,7 +109,8 @@
         "dialog_choose_priority": "Elegir prioridad",
         "dialog_select_date": "Seleccionar fecha",
         "dialog_add_button": "Agregar",
-        "dialog_cancel_button": "Cancelar"
+        "dialog_cancel_button": "Cancelar",
+        "add_task_button": "Añadir tarea" 
         },
         "fi": {
         "input_add_placeholder": "Lisää uusi tehtävä ...",
@@ -139,7 +142,8 @@
         "dialog_choose_priority": "Valitse prioriteetti",
         "dialog_select_date": "Valitse päivä",
         "dialog_add_button": "Lisää",
-        "dialog_cancel_button": "Peruuta"
+        "dialog_cancel_button": "Peruuta",
+        "add_task_button": "Lisää tehtävä"
         },
         "it": {
         "input_add_placeholder": "Aggiungi una nuova attività ...",
@@ -171,7 +175,8 @@
         "dialog_choose_priority": "Scegli priorità",
         "dialog_select_date": "Seleziona data",
         "dialog_add_button": "Aggiungi",
-        "dialog_cancel_button": "Annulla"
+        "dialog_cancel_button": "Annulla",
+        "add_task_button": "Aggiungi attività"
         },
         "ja": {
         "input_add_placeholder": "新しいタスクを追加 ...",
@@ -203,7 +208,8 @@
         "dialog_choose_priority": "優先度を選択",
         "dialog_select_date": "日付を選択",
         "dialog_add_button": "追加",
-        "dialog_cancel_button": "キャンセル"
+        "dialog_cancel_button": "キャンセル",
+        "add_task_button": "タスクを追加" 
         },
         "ko": {
         "input_add_placeholder": "새 작업을 추가 ...",
@@ -235,7 +241,8 @@
         "dialog_choose_priority": "우선순위 선택",
         "dialog_select_date": "날짜 선택",
         "dialog_add_button": "추가",
-        "dialog_cancel_button": "취소"
+        "dialog_cancel_button": "취소",
+        "add_task_button": "작업 추가"  
         },
         "ru": {
         "input_add_placeholder": "Добавьте новую задачу ...",
@@ -267,7 +274,8 @@
         "dialog_choose_priority": "Выберите приоритет",
         "dialog_select_date": "Выберите дату",
         "dialog_add_button": "Добавить",
-        "dialog_cancel_button": "Отмена"
+        "dialog_cancel_button": "Отмена",
+        "add_task_button": "Добавить задачу" 
         },
         "sv": {
         "input_add_placeholder": "Lägg till en ny uppgift ...",
@@ -299,7 +307,8 @@
         "dialog_choose_priority": "Välj prioritet",
         "dialog_select_date": "Välj datum",
         "dialog_add_button": "Lägg till",
-        "dialog_cancel_button": "Avbryt"
+        "dialog_cancel_button": "Avbryt",
+        "add_task_button": "Lägg till uppgift" 
         },
         "th": {
         "input_add_placeholder": "เพิ่มงานใหม่ ...",
@@ -331,7 +340,8 @@
         "dialog_choose_priority": "เลือกลำดับความสำคัญ",
         "dialog_select_date": "เลือกวันที่",
         "dialog_add_button": "เพิ่ม",
-        "dialog_cancel_button": "ยกเลิก"
+        "dialog_cancel_button": "ยกเลิก",
+        "add_task_button": "เพิ่มงาน" 
         },
         "uk": {
         "input_add_placeholder": "Додайте нове завдання ...",
@@ -363,7 +373,8 @@
         "dialog_choose_priority": "Виберіть пріоритет",
         "dialog_select_date": "Виберіть дату",
         "dialog_add_button": "Додати",
-        "dialog_cancel_button": "Скасувати"
+        "dialog_cancel_button": "Скасувати",
+        "add_task_button": "Додати завдання" 
         }
     }
 }
