@@ -1,6 +1,6 @@
 {
     "name": "Todo List App",
-    "short_name": "DailyTodo",
+    "short_name": "DailyTodoApp",
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
