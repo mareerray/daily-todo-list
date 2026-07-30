@@ -8,12 +8,6 @@
     .title-section {
         padding-top: 0.4rem;
     }
-
-    .language-menu-wrapper {
-        top: 0.4rem;
-        right: 0.4rem;
-    }
-
 }
 
 @media (max-width: 768px) {

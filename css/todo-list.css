@@ -10,8 +10,8 @@
 
 .todo {
     margin: 0.5rem;
-    background: var(--clr-light);
-    color: var(--clr-dark);
+    /* background: var(--clr-light); */
+    color: var(--clr-light);
     font-size: var(--fs-body);
     font-weight: var(--fw-bold);
     display: grid;
@@ -34,8 +34,8 @@
 }
 
 .priority-indicator {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: flex;
     align-items: center;

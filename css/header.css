@@ -2,10 +2,10 @@
     width: min(720px, 100%);
     box-shadow: var(--bs);
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1); 
+    -webkit-backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
     border-radius: 16px;
     position: relative;
 }
@@ -15,6 +15,8 @@
 .title-section {
     text-align: center;
     margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
 }
 
 .subtitle-section {
@@ -31,7 +33,7 @@
     font-size: var(--fs-h1);
     letter-spacing: .2em;
     text-transform: lowercase;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .logo-subtitle {
@@ -85,66 +87,6 @@ header {
     align-items: center;
     gap: 1rem;
     flex-wrap: nowrap;
-}
-
-/* LANGUAGE icon-only menu */
-
-.language-menu-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.language-button {
-    background: transparent;
-    border: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.language-dropdown {
-    position: absolute;
-    bottom: 45px;
-    right: 0;
-    background: rgba(139, 137, 137, 0.95);
-    color: var(--clr-light);
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    min-width: 160px;
-    padding: 0.4rem;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    z-index: 1001;
-}
-
-.language-item {
-    display: block;
-    width: 100%;
-    text-align: left;
-    background: transparent;
-    border: none;
-    padding: 0.5rem 0.6rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.language-item:hover {
-    background: rgba(0, 0, 0, 0.06);
-}
-
-.language-item.active {
-    background: var(--clr-light);
-    color: var(--clr-btn-accent);
-    font-weight: 600;
 }
 
 /* Date selector */
