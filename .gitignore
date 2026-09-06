@@ -1,5 +1,6 @@
 # OS junk files
 .DS_Store
+.idea/
 Thumbs.db
 
 # Editor settings
