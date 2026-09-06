@@ -1,0 +1,119 @@
+/* Title row with info icon */
+.title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.info-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.info-btn:hover {
+    color: var(--clr-btn-accent);
+    transform: scale(1.1);
+}
+
+/* Info dialog — reuses .dialog-overlay / .dialog-box from dialog.css */
+.info-box {
+    position: relative;
+    text-align: left;
+    align-items: stretch;
+}
+
+.dialog-close-x {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.3rem;
+}
+
+.dialog-close-x:hover {
+    color: var(--clr-light);
+}
+
+.info-app-name {
+    color: var(--clr-light);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0.25rem 0;
+}
+
+.info-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+}
+
+.info-section-label {
+    color: var(--clr-btn-accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    margin-bottom: 0.4rem;
+}
+
+.info-dev-name {
+    color: var(--clr-light);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 0.2rem 0;
+}
+
+.info-copyright {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    margin: 0 0 1rem 0;
+}
+
+.info-github-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+.info-github-link:hover {
+    color: var(--clr-light);
+}
+
+.info-feedback-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--clr-btn), var(--clr-btn-accent));
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.85rem;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.info-feedback-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+}

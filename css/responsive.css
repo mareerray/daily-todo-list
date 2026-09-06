@@ -53,7 +53,7 @@
     }
 
     .selected-date-display {
-        font-size: 0.95rem;
+        font-size: 1.25rem;
         min-width: auto;
         padding: 0;
     }
@@ -175,7 +175,7 @@
     }
 
     .selected-date-display {
-        font-size: 0.8rem;
+        font-size: 1rem;
         min-width: auto;
         padding: 0;
         white-space: nowrap;

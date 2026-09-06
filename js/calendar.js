@@ -18,7 +18,7 @@ const calendarTodayBtn = document.getElementById('calendarTodayBtn');
 const calendarCloseBtn = document.getElementById('calendarCloseBtn');
 
 function initCalendar() {
-    calendarBtn.addEventListener('click', openCalendar);
+    // calendarBtn.addEventListener('click', openCalendar);
     prevDateBtn.addEventListener('click', () => changeDate(-1));
     nextDateBtn.addEventListener('click', () => changeDate(1));
     prevMonthBtn.addEventListener('click', () => changeCalendarMonth(-1));

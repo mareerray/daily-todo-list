@@ -198,7 +198,7 @@ header {
 
 
 .selected-date-display {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     color: var(--clr-btn-accent);
     font-weight: 600;
     letter-spacing: 0.05em;

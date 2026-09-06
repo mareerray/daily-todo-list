@@ -4,6 +4,20 @@ const languageButton = document.getElementById('languageButton');
 const languageMenu = document.getElementById('languageMenu');
 
 function initUI() {
+    const openInfoBtn = document.getElementById('openInfoBtn');
+    const closeInfoDialogBtn = document.getElementById('closeInfoDialog');
+    const infoDialog = document.getElementById('infoDialog');
+
+    if (openInfoBtn && infoDialog) {
+        openInfoBtn.addEventListener('click', () => {
+            infoDialog.hidden = false;
+        });
+    }
+    if (closeInfoDialogBtn && infoDialog) {
+        closeInfoDialogBtn.addEventListener('click', () => {
+            infoDialog.hidden = true;
+        });
+    }
     if (languageButton) {
         languageButton.addEventListener('click', toggleLanguageMenu);
     }
@@ -21,14 +35,38 @@ function initUI() {
             closeCalendar();
         }
     });
-    document.getElementById('closeAddDialog').addEventListener('click', closeAddDialog);
-    document.getElementById('addDialog').addEventListener('click', (e) => {
-        if (e.target.id === 'addDialog') closeAddDialog();
-    });
-    document.getElementById('dialogAddButton').addEventListener('click', addTodoFromDialog);
-    document.getElementById('addDialogDateBtn').addEventListener('click', () => openCalendar('dialog'));
-    document.getElementById('micButton').addEventListener('click', toggleRecording);
-    document.getElementById('openAddDialogBtn').addEventListener('click', openAddDialog);
+
+    const closeAddDialogBtn = document.getElementById('closeAddDialog');
+    if (closeAddDialogBtn) {
+        closeAddDialogBtn.addEventListener('click', closeAddDialog);
+    }
+
+    const addDialog = document.getElementById('addDialog');
+    if (addDialog) {
+        addDialog.addEventListener('click', (e) => {
+            if (e.target.id === 'addDialog') closeAddDialog();
+        });
+    }
+
+    const dialogAddButton = document.getElementById('dialogAddButton');
+    if (dialogAddButton) {
+        dialogAddButton.addEventListener('click', addTodoFromDialog);
+    }
+
+    const addDialogDateBtn = document.getElementById('addDialogDateBtn');
+    if (addDialogDateBtn) {
+        addDialogDateBtn.addEventListener('click', () => openCalendar('dialog'));
+    }
+
+    const micButton = document.getElementById('micButton');
+    if (micButton) {
+        micButton.addEventListener('click', toggleRecording);
+    }
+
+    const openAddDialogBtn = document.getElementById('openAddDialogBtn');
+    if (openAddDialogBtn) {
+        openAddDialogBtn.addEventListener('click', openAddDialog);
+    }
 }
 
 function toggleLanguageMenu() {
@@ -70,13 +108,11 @@ function setActiveLanguageItem() {
 }
 
 function applyTranslations() {
-    // Input placeholder
     const inputEls = document.querySelectorAll('.todo-input');
     inputEls.forEach(inputEl => {
         inputEl.placeholder = t('input_add_placeholder');
     });
 
-    // Filter options
     const filterEl = document.querySelector('.filter-todo');
     if (filterEl) {
         filterEl.querySelectorAll('option').forEach(opt => {
@@ -90,14 +126,11 @@ function applyTranslations() {
         });
     }
 
-    // Sort button
     const sortBtn = document.querySelector('.sort-btn');
     if (sortBtn) sortBtn.innerHTML = `<i class="bi bi-sort-down fs-4"></i> ${t('sort_priority')}`;
 
-    // Language button title
     if (languageButton) languageButton.title = t('language_hint');
 
-    // Priority select labels and titles
     const prioritySelects = document.querySelectorAll('.priority-select');
     prioritySelects.forEach(prioritySelect => {
         prioritySelect.querySelectorAll('option').forEach(opt => {
@@ -114,7 +147,6 @@ function applyTranslations() {
         });
     });
 
-    // Priority legend
     const legend = document.querySelector('.priority-legend');
     if (legend) {
         const items = legend.querySelectorAll('.legend-item');
@@ -134,13 +166,11 @@ function applyTranslations() {
         });
     }
 
-    // Calendar buttons
     const calendarTodayBtn = document.getElementById('calendarTodayBtn');
     const calendarCloseBtn = document.getElementById('calendarCloseBtn');
     if (calendarTodayBtn) calendarTodayBtn.textContent = t('calendar_today');
     if (calendarCloseBtn) calendarCloseBtn.textContent = t('calendar_close');
 
-    // Dialog translations
     const dialogTitle = document.getElementById('dialogTitle');
     if (dialogTitle) dialogTitle.textContent = t('dialog_add_task_title');
 
@@ -158,7 +188,6 @@ function applyTranslations() {
         dialogDateText.textContent = t('dialog_select_date');
     }
 
-    // Main "Add Task" button (opens dialog)
     const openAddDialogBtn = document.getElementById('openAddDialogBtn');
     if (openAddDialogBtn) {
         const span = openAddDialogBtn.querySelector('span');
@@ -170,15 +199,21 @@ function applyTranslations() {
 
 // Open and close add todo dialog
 function openAddDialog() {
-    document.getElementById('addDialog').hidden = false;
+    const addDialog = document.getElementById('addDialog');
+    if (!addDialog) return;
+    addDialog.hidden = false;
+
     const todayFormatted = formatDateKey(new Date());
-    document.getElementById('addDialogDate_value').value = todayFormatted;
-    document.getElementById('addDialogDateText').textContent = todayFormatted;
+    const dateValueInput = document.getElementById('addDialogDate_value');
+    if (dateValueInput) dateValueInput.value = todayFormatted;
+
+    const dateTextEl = document.getElementById('addDialogDateText');
+    if (dateTextEl) dateTextEl.textContent = todayFormatted;
 }
 
-
 function closeAddDialog() {
-    document.getElementById('addDialog').hidden = true;
+    const addDialog = document.getElementById('addDialog');
+    if (addDialog) addDialog.hidden = true;
 }
 
 // Speech-to-text recording
@@ -187,6 +222,7 @@ let audioChunks = [];
 
 async function toggleRecording() {
     const micBtn = document.getElementById('micButton');
+    if (!micBtn) return;
 
     if (mediaRecorder && mediaRecorder.state === 'recording') {
         mediaRecorder.stop();
@@ -213,14 +249,15 @@ async function toggleRecording() {
                     body: JSON.stringify({ audio: base64Audio })
                 });
                 const result = await response.json();
-                document.getElementById('dialogTodoInput').value = result.text || '';
+                const dialogTodoInput = document.getElementById('dialogTodoInput');
+                if (dialogTodoInput) dialogTodoInput.value = result.text || '';
             };
         };
 
         mediaRecorder.start();
         micBtn.classList.add('recording');
     } catch (err) {
-        alert(`Mic error: ${err.name} - ${err.message}`); // shows actual failure reason
+        alert(`Mic error: ${err.name} - ${err.message}`);
     }
 }
 
@@ -233,25 +270,60 @@ function initBottomNav() {
             const view = item.dataset.view;
 
             if (view === 'language') {
-                toggleLanguageMenu();
+                const wasOpen = languageMenu && !languageMenu.hidden;
+                closeAllDialogs({ skip: 'language' });
+                if (!wasOpen) toggleLanguageMenu();
                 return;
             }
 
             if (view === 'add') {
-                openAddDialog();
+                const addDialogEl = document.getElementById('addDialog');
+                const wasOpen = addDialogEl && !addDialogEl.hidden;
+                closeAllDialogs({ skip: 'add' });
+                if (!wasOpen) {
+                    openAddDialog();
+                } else {
+                    closeAddDialog();
+                }
                 return;
             }
 
             if (view === 'calendar') {
+                closeAllDialogs({ skip: 'calendar' });
                 openCalendar('home');
                 return;
             }
 
+            closeAllDialogs();
             navItems.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
             showView(view);
         });
     });
+}
+
+// Closes any currently-open dialog/menu so switching between
+// nav actions never leaves something stuck open underneath.
+// Pass { skip: 'calendar' | 'add' | 'language' } to avoid closing
+// the one thing you're about to open right after calling this.
+function closeAllDialogs(options = {}) {
+    const skip = options.skip;
+
+    if (skip !== 'add') {
+        const addDialog = document.getElementById('addDialog');
+        if (addDialog && !addDialog.hidden) addDialog.hidden = true;
+    }
+
+    const infoDialog = document.getElementById('infoDialog');
+    if (infoDialog && !infoDialog.hidden) infoDialog.hidden = true;
+
+    if (skip !== 'language') {
+        hideLanguageMenu();
+    }
+
+    if (skip !== 'calendar') {
+        closeCalendar();
+    }
 }
 
 function showView(view) {
