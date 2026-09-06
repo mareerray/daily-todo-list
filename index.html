@@ -51,13 +51,8 @@
         <!-- HEADER -->
         <header>
             <div class="selected-date-display" id="selectedDateDisplay"></div>
-            <button class="date-nav-btn" id="prevDateBtn" aria-label="Previous date" title="Previous date"><i
-                    class="bi bi-chevron-left"></i></button>
-            <button id="calendarBtn" class="date-picker" aria-label="Open calendar" title="Open calendar"><i
-                    class="bi bi-calendar3"></i></button>
-            <button class="date-nav-btn" id="nextDateBtn" aria-label="Next date" title="Next date"><i
-                    class="bi bi-chevron-right"></i></button>
         </header>
+
 
         <!-- INPUT SECTION -->
         <div class="input-container">
@@ -98,7 +93,8 @@
                 <input type="hidden" id="addDialogDate_value" />
 
                 <div class="input-group">
-                    <label for="dialogPrioritySelect" id="dialogPriorityLabel" class="dialog-label">Choose priority</label>
+                    <label for="dialogPrioritySelect" id="dialogPriorityLabel" class="dialog-label">Choose
+                        priority</label>
                     <select id="dialogPrioritySelect" class="priority-select" title="Priority">
                         <option value="high">🔴 High</option>
                         <option value="medium" selected>🟡 Medium</option>
@@ -106,7 +102,8 @@
                     </select>
                     <input type="text" id="dialogTodoInput" class="todo-input" placeholder="Add a new task..."
                         maxlength="50">
-                    <button id="micButton" type="button" class="todo-button" aria-label="Voice input" title="Voice input">
+                    <button id="micButton" type="button" class="todo-button" aria-label="Voice input"
+                        title="Voice input">
                         <i class="bi bi-mic-fill"></i>
                     </button>
                     <button id="dialogAddButton" type="button" class="todo-button" aria-label="Add task"
@@ -125,25 +122,31 @@
         <ul class="todo-list"></ul>
     </div>
 
+    <!-- EDGE DATE NAV — pinned near bottom of card, left/right edges -->
+    <button class="date-nav-btn edge-nav-btn edge-nav-left" id="prevDateBtn" aria-label="Previous date"
+        title="Previous date"><i class="bi bi-chevron-left"></i></button>
+    <button class="date-nav-btn edge-nav-btn edge-nav-right" id="nextDateBtn" aria-label="Next date"
+        title="Next date"><i class="bi bi-chevron-right"></i></button>
+
     <!-- BOTTOM NAVIGATION -->
     <nav class="bottom-nav">
-        <button class="nav-item active" data-view="home">
+        <button class="nav-item active" data-view="home" aria-label="Home" title="Home">
             <i class="bi bi-house-fill"></i>
-            <span>Home</span>
+            <!-- <span>Home</span> -->
         </button>
-        <button class="nav-item" data-view="add">
+        <button class="nav-item" data-view="add" aria-label="Add task" title="Add task">
             <i class="bi bi-plus-circle-fill"></i>
-            <span>Add</span>
+            <!-- <span>Add</span> -->
         </button>
-        <button class="nav-item" data-view="search">
-            <i class="bi bi-search"></i>
-            <span>Search</span>
+        <button class="nav-item" data-view="calendar" id="calendarBtn" aria-label="Calendar" title="Calendar">
+            <i class="bi bi-calendar3"></i>
+            <!-- <span>Calendar</span> -->
         </button>
 
         <div class="language-menu-wrapper nav-item" data-view="language">
             <button class="language-button" id="languageButton" aria-label="Change language" title="Change language">
                 <i class="bi bi-globe"></i>
-                <span>Language</span>
+                <!-- <span>Language</span> -->
             </button>
             <div id="languageMenu" class="language-dropdown" aria-label="Languages" hidden>
                 <button class="language-item" data-lang="de">Deutsch</button>

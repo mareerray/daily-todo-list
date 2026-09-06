@@ -223,48 +223,6 @@ async function toggleRecording() {
         alert(`Mic error: ${err.name} - ${err.message}`); // shows actual failure reason
     }
 }
-// async function toggleRecording() {
-//     const micBtn = document.getElementById('micButton');
-
-//     if (mediaRecorder && mediaRecorder.state === 'recording') {
-//         mediaRecorder.stop();
-//         micBtn.classList.remove('recording');
-//         return;
-//     }
-
-//     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-
-//     mediaRecorder = new MediaRecorder(stream);
-//     audioChunks = [];
-
-//     mediaRecorder.ondataavailable = (e) => {
-//         audioChunks.push(e.data);
-//     };
-
-//     mediaRecorder.onstop = async () => {
-//         const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-
-//         const reader = new FileReader();
-//         reader.readAsDataURL(audioBlob);
-//         reader.onloadend = async () => {
-//             const base64Audio = reader.result.split(',')[1];
-
-//             const response = await fetch('/api/stt', {
-//                 method: 'POST',
-//                 headers: { 'Content-Type': 'application/json' },
-//                 body: JSON.stringify({ audio: base64Audio })
-//             });
-
-//             console.log('Response status:', response.status);
-//             const result = await response.json();
-//             console.log('STT Response:', result);
-//             document.getElementById('dialogTodoInput').value = result.text || '';
-//         };
-//     };
-
-//     mediaRecorder.start();
-//     micBtn.classList.add('recording');
-// }
 
 // Bottom Navigation
 function initBottomNav() {
@@ -281,6 +239,11 @@ function initBottomNav() {
 
             if (view === 'add') {
                 openAddDialog();
+                return;
+            }
+
+            if (view === 'calendar') {
+                openCalendar('home');
                 return;
             }
 

@@ -2,22 +2,28 @@
     width: min(720px, 100%);
     box-shadow: var(--bs);
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.1); 
-    -webkit-backdrop-filter: blur(10px); 
-    backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255, 255, 255, 0.2); 
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     position: relative;
+    padding-bottom: 5.5rem;
+    /* room for the floating chevrons above bottom nav */
 }
 
+
 /* HEADER styling */
+
 
 .title-section {
     text-align: center;
     margin-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
+
 }
+
 
 .subtitle-section {
     display: flex;
@@ -29,12 +35,14 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+
 .logo-title {
     font-size: var(--fs-h1);
     letter-spacing: .2em;
     text-transform: lowercase;
     margin-bottom: 10px;
 }
+
 
 .logo-subtitle {
     font-size: var(--fs-label);
@@ -45,6 +53,7 @@
     margin: 0;
 }
 
+
 .header-footer {
     display: flex;
     align-items: center;
@@ -53,10 +62,12 @@
     flex-wrap: wrap;
 }
 
+
 .social-icons {
     display: flex;
     gap: 0.8rem;
 }
+
 
 .social-icons a {
     display: flex;
@@ -69,17 +80,21 @@
     transition: all 0.3s ease;
 }
 
+
 .social-icons a:hover {
     color: var(--clr-btn-accent);
     transform: translateY(-2px);
     box-shadow: var(--bs);
 }
 
+
 .social-icons i {
     font-size: var(--fs-icon);
 }
 
+
 /* DATE SELECTOR styling */
+
 
 header {
     display: flex;
@@ -89,7 +104,9 @@ header {
     flex-wrap: nowrap;
 }
 
+
 /* Date selector */
+
 
 .date-selector {
     display: flex;
@@ -99,6 +116,7 @@ header {
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
+
 
 .date-nav-btn {
     background: rgba(255, 255, 255, 0.1);
@@ -115,6 +133,7 @@ header {
     font-size: 0.95rem;
 }
 
+
 .date-nav-btn:hover {
     background: var(--clr-btn-accent);
     border-color: var(--clr-btn-accent);
@@ -122,9 +141,11 @@ header {
     box-shadow: 0 6px 16px rgba(255, 111, 71, 0.3);
 }
 
+
 .date-nav-btn:active {
     transform: translateY(0);
 }
+
 
 .date-picker {
     padding: 0.4rem 0.8rem;
@@ -139,10 +160,12 @@ header {
     outline: none;
 }
 
+
 .date-picker:hover {
     background: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.3);
 }
+
 
 .date-picker:focus {
     background: rgba(255, 255, 255, 0.15);
@@ -150,9 +173,11 @@ header {
     box-shadow: 0 0 0 3px rgba(255, 111, 71, 0.2);
 }
 
+
 .date-picker::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
+
 
 /* Calendar styling for date input */
 .date-picker::-webkit-calendar-picker-indicator {
@@ -161,13 +186,16 @@ header {
     transition: all 0.3s ease;
 }
 
+
 .date-picker::-webkit-calendar-picker-indicator:hover {
     filter: invert(1) brightness(1.4) drop-shadow(0 0 4px rgba(255, 111, 71, 0.4));
 }
 
+
 .header-right {
     display: none;
 }
+
 
 .selected-date-display {
     font-size: 0.95rem;
@@ -178,3 +206,35 @@ header {
     text-align: center;
     font-family: var(--ff-secondary);
 }
+
+
+/* Positioning only — visual styling (background, border, hover)
+   stays in your existing .date-nav-btn rule. Fixed to the viewport
+   so they sit consistently just above the bottom nav.
+
+   IMPORTANT: .bottom-nav uses z-index: 1000 (see nav.css), so this
+   MUST be higher than 1000 or the nav bar will visually cover it. */
+
+.edge-nav-btn {
+    position: fixed;
+    bottom: 3.5rem;
+    z-index: 1001;
+}
+
+.edge-nav-left {
+    left: 1rem;
+}
+
+.edge-nav-right {
+    right: 1rem;
+}
+
+/* @media (max-width: 480px) {
+    .edge-nav-left {
+        left: 1rem;
+    }
+
+    .edge-nav-right {
+        right: 1rem;
+    }
+} */
