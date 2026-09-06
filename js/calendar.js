@@ -35,10 +35,16 @@ function openCalendar(mode = 'home') {
     currentCalendarMonth = new Date(selectedDate);
     renderCalendar();
     calendarOverlay.classList.add('active');
+    setDateNavVisible(false); // NEW
 }
 
 function closeCalendar() {
     calendarOverlay.classList.remove('active');
+    // Only restore if the Add dialog isn't also open underneath
+    const addDialog = document.getElementById('addDialog');
+    if (!addDialog || addDialog.hidden) {
+        setDateNavVisible(true); // NEW
+    }
 }
 
 function selectToday() {
@@ -57,31 +63,31 @@ function changeCalendarMonth(direction) {
 function renderCalendar() {
     const year = currentCalendarMonth.getFullYear();
     const month = currentCalendarMonth.getMonth();
-    
+
     // Display month and year (use Buddhist calendar for Thai)
     const displayYear = getCurrentLang() === 'th' ? year + 543 : year;
     const monthNames = getMonthNames();
     calendarMonthYear.textContent = `${monthNames[month]} ${displayYear}`;
-    
+
     // Update weekday headers
     const weekdayNames = getWeekdayNames();
     const weekdayElements = document.querySelectorAll('.calendar-weekday');
     weekdayElements.forEach((el, index) => {
         el.textContent = weekdayNames[index];
     });
-    
+
     // Get first day of month and number of days
     const firstDay = new Date(year, month, 1);
     const lastDay = new Date(year, month + 1, 0);
     const daysInMonth = lastDay.getDate();
     const startingDayOfWeek = firstDay.getDay();
-    
+
     // Get previous month's last days
     const prevMonthLastDay = new Date(year, month, 0).getDate();
-    
+
     // Clear calendar
     calendarDays.innerHTML = '';
-    
+
     // Add previous month's days
     for (let i = startingDayOfWeek - 1; i >= 0; i--) {
         const dayDiv = document.createElement('div');
@@ -89,30 +95,30 @@ function renderCalendar() {
         dayDiv.textContent = prevMonthLastDay - i;
         calendarDays.appendChild(dayDiv);
     }
-    
+
     // Add current month's days
     const today = new Date();
     for (let day = 1; day <= daysInMonth; day++) {
         const dayDiv = document.createElement('div');
         dayDiv.classList.add('calendar-day');
         dayDiv.textContent = day;
-        
+
         const currentDate = new Date(year, month, day);
-        
+
         // Check if today
         if (currentDate.toDateString() === today.toDateString()) {
             dayDiv.classList.add('today');
         }
-        
+
         // Check if selected date
         if (currentDate.toDateString() === selectedDate.toDateString()) {
             dayDiv.classList.add('selected');
         }
-        
+
         dayDiv.addEventListener('click', () => selectDate(currentDate));
         calendarDays.appendChild(dayDiv);
     }
-    
+
     // Add next month's days to fill the grid
     const totalCells = calendarDays.children.length;
     const remainingCells = 42 - totalCells; // 6 rows * 7 days
@@ -145,13 +151,13 @@ function changeDate(days) {
 
 function updateDateDisplay() {
     const locale = getLocale();
-    const options = { 
+    const options = {
         weekday: 'short',
         year: 'numeric',
-        month: 'short', 
+        month: 'short',
         day: 'numeric'
     };
-    
+
     // For Thai, use Buddhist calendar
     if (getCurrentLang() === 'th') {
         const dtf = new Intl.DateTimeFormat('th-TH-u-ca-buddhist', options);

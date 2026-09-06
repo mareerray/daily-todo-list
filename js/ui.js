@@ -3,6 +3,12 @@
 const languageButton = document.getElementById('languageButton');
 const languageMenu = document.getElementById('languageMenu');
 
+function setDateNavVisible(visible) {
+    [prevDateBtn, calendarBtn, nextDateBtn].forEach(btn => {
+        if (btn) btn.hidden = !visible;
+    });
+}
+
 function initUI() {
     const openInfoBtn = document.getElementById('openInfoBtn');
     const closeInfoDialogBtn = document.getElementById('closeInfoDialog');
@@ -199,21 +205,16 @@ function applyTranslations() {
 
 // Open and close add todo dialog
 function openAddDialog() {
-    const addDialog = document.getElementById('addDialog');
-    if (!addDialog) return;
-    addDialog.hidden = false;
-
+    document.getElementById('addDialog').hidden = false;
     const todayFormatted = formatDateKey(new Date());
-    const dateValueInput = document.getElementById('addDialogDate_value');
-    if (dateValueInput) dateValueInput.value = todayFormatted;
-
-    const dateTextEl = document.getElementById('addDialogDateText');
-    if (dateTextEl) dateTextEl.textContent = todayFormatted;
+    document.getElementById('addDialogDate_value').value = todayFormatted;
+    document.getElementById('addDialogDateText').textContent = todayFormatted;
+    setDateNavVisible(false); // NEW
 }
 
 function closeAddDialog() {
-    const addDialog = document.getElementById('addDialog');
-    if (addDialog) addDialog.hidden = true;
+    document.getElementById('addDialog').hidden = true;
+    setDateNavVisible(true); // NEW
 }
 
 // Speech-to-text recording

@@ -229,12 +229,7 @@ header {
     right: 1rem;
 }
 
-/* @media (max-width: 480px) {
-    .edge-nav-left {
-        left: 1rem;
-    }
-
-    .edge-nav-right {
-        right: 1rem;
-    }
-} */
+.date-nav-btn[hidden],
+.date-picker[hidden] {
+    display: none !important;
+}
