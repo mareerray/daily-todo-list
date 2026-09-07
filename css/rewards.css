@@ -1,28 +1,38 @@
-/* rewards.css — visual styles for the reward toast + confetti burst */
+/* rewards.css — visual styles for the reward toast (emoji) + confetti burst */
 
 .reward-toast {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)scale(0.85);
-  background: #1f2933;
-  color: #fff;
-  padding: 16px 28px;
-  border-radius: 999px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%) scale(0.4) rotate(-15deg);
+  font-size: 4.5rem;
+  line-height: 1;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
   opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   z-index: 9999;
   pointer-events: none;
-  text-align: center;
-  white-space: nowrap;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
 }
 
 .reward-toast--visible {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1.05);
+  animation: reward-pop-and-wiggle 1s ease-in-out forwards;
+}
+
+/* Pop-in bounce, then wiggle twice, all in one continuous animation
+   so nothing conflicts with the opacity transition used for fade-out. */
+@keyframes reward-pop-and-wiggle {
+  0%   { transform: translate(-50%, -50%) scale(0.4) rotate(-15deg); }
+  30%  { transform: translate(-50%, -50%) scale(1.15) rotate(5deg); }
+  45%  { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  60%  { transform: translate(-50%, -50%) scale(1.08) rotate(-8deg); }
+  75%  { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  90%  { transform: translate(-50%, -50%) scale(1.08) rotate(8deg); }
+  100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
 }
 
 .reward-confetti-container {
