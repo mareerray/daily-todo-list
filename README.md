@@ -1,79 +1,87 @@
-# Todo List App
+# Daily Todo List
 
-A modern, responsive todo list application built with vanilla JavaScript, featuring priority management, filtering, and sorting capabilities.
+A responsive daily task planner with priority levels, filtering, sorting, calendar view, and voice-powered task input. Built as a personal project to practice vanilla JavaScript, PWA features, and serverless API integration.
 
-🔗 **[Live Demo: https://mareerray.github.io/daily-todo-list/](https://mareerray.github.io/daily-todo-list/)**
+## Live Demos
+
+This project has two versions, deployed separately:
+
+| Version | Description | Stack | Live Link |
+|---|---|---|---|
+| **Full version (this repo)** | Complete app with speech-to-text for hands-free task input, calendar view, and 11-language support | Vanilla JS/HTML/CSS + Node.js serverless functions | [Deployed on Vercel](https://dailytodo-xi.vercel.app) |
+| **Simple version** | Lightweight core todo app with no backend dependencies | Vanilla JS/HTML/CSS only | [daily-todo-simple](https://mareerray.github.io/daily-todo-simple) |
+
+The simple version is kept as a standalone, dependency-free snapshot for anyone who wants to see the core todo logic without the added speech-feature complexity. This repository (`main` branch) is the actively developed, full-featured version.
 
 ## Features
 
-📅 **Daily Task Organization**
-- Date-based task management with date picker
-- Navigate between dates using previous/next day buttons
-- View and manage tasks specific to each date
-- Tasks are automatically sorted by priority for each date
+- Add, delete, and complete tasks with priority levels (high, medium, low)
+- Filter and sort tasks by priority, status, and date
+- Calendar view with date-based navigation for daily planning
+- Voice input: add a task by speaking, transcribed via speech-to-text
+- Supports 11 languages for task management and calendar view
+- Installable as a Progressive Web App (PWA) on desktop and mobile
+- Responsive design tested across browsers, phones, tablets, and older devices
 
-✨ **Priority System**
-- Three priority levels: High (do it now), Medium (finish soon), Low (plan for later)
-- Visual priority indicators with color-coded badges
-- Pulsing animation for high-priority tasks
+## Screenshots
 
-🔍 **Smart Filtering**
-- Filter by completion status (All, Completed, Active)
-- Filter by priority level (High, Medium, Low)
+<div>
+<img src="assets/images/welcome_dialog.png" width="280" height="600"> <img src="assets/images/home_and_language_picker.png" width="280" height="600"> <img src="assets/images/add_task.png" width="280" height="600"> <img src="assets/images/calendar_view.png" width="280" height="600">
+</div>
 
-📊 **Priority Sorting**
-- Sort active tasks by priority with one click
-- Automatically displays uncompleted tasks sorted from high to low priority
+## Planned / In Progress
 
-💾 **Data Persistence**
-- Tasks are saved to localStorage with their due dates
-- Data persists across browser sessions
-- Tasks organized and retrieved by date
+- Edit existing tasks
+- Reorder tasks (drag-and-drop or manual sorting)
+- Voice playback (text-to-speech read-back of tasks)
 
-📱 **Responsive Design**
-- Mobile-friendly layout with optimized controls
-- Glass morphism UI with gradient accents
-- Smooth animations and transitions
+## Tech Stack
 
-🌐 **Language Options**
-- Built-in language selector (English, ไทย, Español, Svenska, Русский, Українська, Suomi, Deutsch, Italiano)
-- Auto-detects your browser language on first load
-- Persists your choice in localStorage
-- Translates UI labels, messages, and date formatting
-
-## Technologies Used
-
-- **HTML5** - Structure
-- **CSS3** - Styling with custom properties, flexbox, and media queries
-- **Vanilla JavaScript** - Application logic and DOM manipulation
-- **Bootstrap Icons** - Modern icon set
-- **localStorage API** - Data persistence
-
-## Usage
-
-1. **Select a Date**: Use the date picker or previous/next buttons to navigate between dates
-2. **Add a Task**: Enter your task, select a priority level, and click the + button
-3. **Complete a Task**: Click the checkmark icon to mark as complete
-4. **Delete a Task**: Click the trash icon to remove a task
-5. **Filter Tasks**: Use the dropdown to filter by status or priority
-6. **Sort Tasks**: Click the "Priority" button to view active tasks sorted by priority
-7. **Navigate Dates**: Tasks are automatically organized by date, allowing you to plan ahead or review past tasks
-8. **Change Language**: Use the language dropdown in the header to switch UI language. Your choice is remembered.
+- **Frontend:** Vanilla JavaScript, HTML, CSS
+- **Backend:** Node.js serverless functions (`stt.js`, `tts.js`) for speech processing, deployed on Vercel
+- **PWA:** Web App Manifest, offline-friendly design
+- **Storage:** Browser local storage for task persistence
 
 ## Project Structure
 
 ```
-My-ToDo-List/
-├── index.html      # Main HTML structure
-├── style.css       # Styles and responsive design
-├── app.js          # Application logic
-├── sw.js           # Service worker for offline caching
-└── README.md       # Project documentation
+daily-todo-list/
+├── index.html            # Main app entry point
+├── manifest.vercel.json  # PWA manifest for Vercel deployment
+├── sw.js                 # Service worker for PWA/offline support
+├── translations.json     # 11-language translation strings
+├── api/                  # Node.js serverless functions (Vercel)
+│   ├── stt.js            # Speech-to-text endpoint
+│   └── tts.js            # Text-to-speech endpoint (in progress)
+├── js/
+│   ├── app.js             # App initialization
+│   ├── calendar.js        # Calendar view logic
+│   ├── i18n.js             # Language switching / translations logic
+│   ├── storage.js         # Local storage read/write
+│   ├── todos.js           # Task CRUD logic
+│   └── ui.js              # DOM rendering and UI interactions
+├── css/                  # Stylesheets
+└── package.json          # Node dependencies for serverless functions
+```
+
+## Running Locally
+
+```bash
+git clone https://github.com/mareerray/daily-todo-list.git
+cd daily-todo-list
+npm install
+```
+
+Set up any required environment variables for the speech-to-text API key, then run the project locally using Vercel's CLI for full serverless function support:
+
+```bash
+vercel dev
 ```
 
 ## Author
 
-**Mayuree Reunsati**
+Built by [Mayuree Reunsati](https://github.com/mareerray) as a self-directed learning project exploring frontend development, PWA capabilities, and API integration.
+
 - GitHub: [@mareerray](https://github.com/mareerray)
 - LinkedIn: [Mayuree Reunsati](https://linkedin.com/in/mayuree-reunsati)
 
