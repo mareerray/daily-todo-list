@@ -1,3 +1,9 @@
+:root {
+    --clr-cal-overdue: #ec4899;
+    --clr-cal-today: #ddd6fe;
+    --clr-cal-future: #f59e0b;
+}
+
 .calendar-popup {
     background: rgba(48, 48, 48, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -92,6 +98,7 @@
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--clr-light);
+    position: relative;
 }
 
 .calendar-day:hover {
@@ -152,3 +159,51 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
+.has-overdue::after,
+.has-today-task::after,
+.has-future::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    bottom: 3px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.has-overdue::after { background-color: var(--clr-cal-overdue); }
+.has-today-task::after { background-color: var(--clr-cal-today); }
+.has-future::after { background-color: var(--clr-cal-future); }
+
+
+.calendar-legend {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    font-size: var(--fs-label);
+    color: var(--clr-light);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.legend-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.legend-dot.has-overdue { background-color: var(--clr-cal-overdue); }
+.legend-dot.has-today-task { background-color: var(--clr-cal-today); }
+.legend-dot.has-future { background-color: var(--clr-cal-future); }

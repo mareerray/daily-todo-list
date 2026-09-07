@@ -60,6 +60,24 @@ function changeCalendarMonth(direction) {
     renderCalendar();
 }
 
+function getDateStatusMap() {
+    const todos = getTodosFromStorage();
+    const todayKey = formatDateKey(new Date());
+    const map = {};
+
+    todos.forEach(todo => {
+        if (todo.completed) return;
+        const key = todo.dueDate;
+        if (key < todayKey) {
+            map[key] = 'overdue';
+        } else if (map[key] !== 'overdue') {
+            map[key] = key === todayKey ? 'today-task' : 'future';
+        }
+    });
+
+    return map;
+}
+
 function renderCalendar() {
     const year = currentCalendarMonth.getFullYear();
     const month = currentCalendarMonth.getMonth();
@@ -85,6 +103,9 @@ function renderCalendar() {
     // Get previous month's last days
     const prevMonthLastDay = new Date(year, month, 0).getDate();
 
+    // Get the status of each date
+    const statusMap = getDateStatusMap();
+
     // Clear calendar
     calendarDays.innerHTML = '';
 
@@ -104,6 +125,7 @@ function renderCalendar() {
         dayDiv.textContent = day;
 
         const currentDate = new Date(year, month, day);
+        const dateKey = formatDateKey(currentDate);
 
         // Check if today
         if (currentDate.toDateString() === today.toDateString()) {
@@ -113,6 +135,10 @@ function renderCalendar() {
         // Check if selected date
         if (currentDate.toDateString() === selectedDate.toDateString()) {
             dayDiv.classList.add('selected');
+        }
+
+        if (statusMap[dateKey]) {
+            dayDiv.classList.add(`has-${statusMap[dateKey]}`);
         }
 
         dayDiv.addEventListener('click', () => selectDate(currentDate));

@@ -114,6 +114,12 @@ function deleteCheck(e) {
         // Animation
         todo.classList.add('fall');
         removeTodoFromStorage(todoText);
+
+        // Refresh calendar dots if it's open
+        if (calendarOverlay.classList.contains('active')) {
+            renderCalendar();
+        }
+
         todo.addEventListener('transitionend', function() {
             todo.remove();
             // Check if list is empty and add message

@@ -185,6 +185,16 @@ function applyTranslations() {
     if (calendarTodayBtn) calendarTodayBtn.textContent = t('calendar_today');
     if (calendarCloseBtn) calendarCloseBtn.textContent = t('calendar_close');
 
+    const calendarLegend = document.querySelector('.calendar-legend');
+    if (calendarLegend) {
+        const overdueSpan = calendarLegend.querySelector('[data-i18n="legend_overdue"]');
+        const todaySpan = calendarLegend.querySelector('[data-i18n="legend_today"]');
+        const upcomingSpan = calendarLegend.querySelector('[data-i18n="legend_upcoming"]');
+        if (overdueSpan) overdueSpan.textContent = t('legend_overdue');
+        if (todaySpan) todaySpan.textContent = t('legend_today');
+        if (upcomingSpan) upcomingSpan.textContent = t('legend_upcoming');
+    }
+
     const dialogTitle = document.getElementById('dialogTitle');
     if (dialogTitle) dialogTitle.textContent = t('dialog_add_task_title');
 
