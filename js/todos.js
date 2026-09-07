@@ -145,6 +145,10 @@ function deleteCheck(e) {
         if (todoIndex > -1) {
             todos[todoIndex].completed = !todos[todoIndex].completed;
             localStorage.setItem('todos', JSON.stringify(todos));
+
+            if (todos[todoIndex].completed) {
+                Rewards.celebrate();
+            }
         }
     }
 }
