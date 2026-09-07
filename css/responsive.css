@@ -68,7 +68,7 @@
     .input-group {
         flex-direction: row;
         flex-wrap: nowrap;
-        border-radius: 12px;
+        /* border-radius: 12px; */
         overflow: hidden;
     }
 
@@ -282,7 +282,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: stretch;
-        border-radius: 12px;
+        /* border-radius: 12px; */
         overflow: hidden;
         min-width: 0;
         flex: 1;
