@@ -3,14 +3,7 @@
 // and it shows a quick confetti burst + a friendly message. That's it.
 
 const Rewards = (() => {
-  const MESSAGES = [
-    'Nice work! 🎉',
-    'One step closer! 💪',
-    'You crushed it! ⭐',
-    'Task complete! 🚀',
-    'Great job! 🌟',
-    'Keep it up! 🔥'
-  ];
+  const MESSAGES = ['🎉', '⭐', '🚀', '🌟', '🔥', '🏆', '💪', '✨', '🎊', '👏']
 
   function showToast(message) {
     const toast = document.createElement('div');
@@ -23,7 +16,7 @@ const Rewards = (() => {
     setTimeout(() => {
       toast.classList.remove('reward-toast--visible');
       toast.addEventListener('transitionend', () => toast.remove(), { once: true });
-    }, 1500);
+    }, 1200);
   }
 
   function fireConfetti() {
