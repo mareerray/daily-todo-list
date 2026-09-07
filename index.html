@@ -74,40 +74,54 @@
             <span class="legend-item"><span class="legend-dot medium"></span> Finish soon</span>
             <span class="legend-item"><span class="legend-dot low"></span> Plan later</span>
         </div>
+    </div>
 
-        <!-- TASK DIALOG -->
-        <div id="addDialog" class="dialog-overlay" hidden>
-            <div class="dialog-box">
-                <h3 id="dialogTitle" class="dialog-title">Add a task</h3>
+    <!-- TASK DIALOG -->
+    <div id="addDialog" class="dialog-overlay" hidden>
+        <div class="dialog-box">
+            <h3 id="dialogTitle" class="dialog-title">Add a task</h3>
 
 
-                <div class="input-group">
-                    <label for="dialogPrioritySelect" id="dialogPriorityLabel" class="dialog-label">Choose
-                        priority</label>
-                    <select id="dialogPrioritySelect" class="priority-select" title="Priority">
-                        <option value="high">🔴 High</option>
-                        <option value="medium" selected>🟡 Medium</option>
-                        <option value="low">🔵 Low</option>
-                    </select>
-                    <input type="text" id="dialogTodoInput" class="todo-input" placeholder="Add a new task..."
-                        maxlength="50">
-                    <button id="micButton" type="button" class="todo-button" aria-label="Voice input"
-                        title="Voice input">
-                        <i class="bi bi-mic-fill"></i>
-                    </button>
-                    <button id="dialogAddButton" type="button" class="todo-button" aria-label="Add task"
-                        title="Add task">
-                        <i class="bi bi-plus-circle-fill"></i>
-                    </button>                
-                    <button type="button" id="addDialogDateBtn" class="date-picker">
+            <div class="input-group">
+                <label for="dialogPrioritySelect" id="dialogPriorityLabel" class="dialog-label">Choose
+                    priority</label>
+                <select id="dialogPrioritySelect" class="priority-select" title="Priority">
+                    <option value="high">🔴 High</option>
+                    <option value="medium" selected>🟡 Medium</option>
+                    <option value="low">🔵 Low</option>
+                </select>
+                <input type="text" id="dialogTodoInput" class="todo-input" placeholder="Add a new task..."
+                    maxlength="50">
+                <button id="micButton" type="button" class="todo-button" aria-label="Voice input" title="Voice input">
+                    <i class="bi bi-mic-fill"></i>
+                </button>
+                <button id="dialogAddButton" type="button" class="todo-button" aria-label="Add task" title="Add task">
+                    <i class="bi bi-plus-circle-fill"></i>
+                </button>
+                <button type="button" id="addDialogDateBtn" class="date-picker">
                     <i class="bi bi-calendar3"></i> <span id="addDialogDateText">Select date</span>
                 </button>
                 <input type="hidden" id="addDialogDate_value" />
 
-                </div>
-
-                <!-- <button id="closeAddDialog" type="button" class="dialog-cancel">Cancel</button> -->
             </div>
+
+            <!-- <button id="closeAddDialog" type="button" class="dialog-cancel">Cancel</button> -->
+        </div>
+    </div>
+
+    <!-- WELCOME DIALOG (first-time users only) -->
+    <div id="welcomeDialog" class="dialog-overlay" hidden>
+        <div class="dialog-box welcome-box">
+            <h3 class="dialog-title">Welcome to daily &lt;todo&gt;! </h3>
+            <p class="welcome-text">Here's how to get started:</p>
+            <ul class="welcome-steps">
+                <li>Type your task, or tap the <strong>mic</strong> to speak it — tap again to stop, check the text,
+                    then tap <strong>+</strong> to add it</li>
+                <li>Choose a priority: 🔴 High, 🟡 Medium, or 🔵 Low</li>
+                <li>Use the calendar icon to plan tasks for any date</li>
+                <li>Tap a task to mark it done, or tap 🗑️ to delete it</li>
+            </ul>
+            <button id="closeWelcomeBtn" type="button" class="todo-button">Get Started</button>
         </div>
     </div>
 
@@ -123,6 +137,18 @@
                 A simple daily task manager for planning, prioritizing, and tracking
                 your to-dos by date, with calendar navigation and priority levels.
             </p>
+
+            <div class="info-section-label">HOW TO USE</div>
+            <ul class="info-howto-list">
+                <li><strong>Add a task</strong> — tap the + button, type your task, pick a priority</li>
+                <li><strong>Add by voice</strong> — tap the mic to start speaking, tap it again to stop, review the
+                    converted text in the input field, then tap + to add it as a task</li>
+                <li><strong>Set a date</strong> — use the calendar picker in the Add dialog, or the bottom-nav calendar
+                    to browse by day</li>
+                <li><strong>Change language</strong> — tap the globe icon for 11 supported languages</li>
+                <li><strong>Voice input</strong> — tap the mic icon and speak your task instead of typing</li>
+                <li><strong>Filter and sort</strong> — use the dropdown and sort button above your task list</li>
+            </ul>
 
             <div class="info-section-label">DEVELOPER</div>
             <p class="info-dev-name">Mayuree Reunsati</p>
@@ -154,7 +180,7 @@
     <!-- BOTTOM NAVIGATION -->
     <nav class="bottom-nav">
         <button class="nav-item active" data-view="home" aria-label="Home" title="Home">
-            <i class="bi bi-house-fill"></i>
+            <i class="bi bi-list-columns-reverse"></i>
             <!-- <span>Home</span> -->
         </button>
         <button class="nav-item" data-view="add" aria-label="Add task" title="Add task">

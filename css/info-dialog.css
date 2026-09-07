@@ -117,3 +117,24 @@
     transform: translateY(-2px);
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
 }
+
+.welcome-steps,
+.info-howto-list {
+    text-align: left;
+    padding-left: 1.2rem;
+    margin: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.welcome-steps li,
+.info-howto-list li {
+    margin-bottom: 0.4rem;
+}
+
+.welcome-text {
+    color: var(--clr-light);
+    text-align: center;
+    margin-bottom: 0.25rem;
+}

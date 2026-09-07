@@ -17,6 +17,19 @@ async function initializeApp() {
     // Set initial date and display todos
     updateDateDisplay();
     displayTodosForDate(getSelectedDate());
+
+    // Show welcome dialog for first-time users
+    checkFirstVisit();
+}
+
+// Show welcome dialog once, then remember the user has seen it
+function checkFirstVisit() {
+    const welcomeDialog = document.getElementById('welcomeDialog');
+    if (!welcomeDialog) return;
+
+    if (!localStorage.getItem('hasVisitedBefore')) {
+        welcomeDialog.hidden = false;
+    }
 }
 
 // Initialize app when DOM is ready

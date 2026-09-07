@@ -14,6 +14,14 @@ function initUI() {
     const closeInfoDialogBtn = document.getElementById('closeInfoDialog');
     const infoDialog = document.getElementById('infoDialog');
 
+    const closeWelcomeBtn = document.getElementById('closeWelcomeBtn');
+    const welcomeDialog = document.getElementById('welcomeDialog');
+    if (closeWelcomeBtn && welcomeDialog) {
+        closeWelcomeBtn.addEventListener('click', () => {
+            welcomeDialog.hidden = true;
+            localStorage.setItem('hasVisitedBefore', 'true');
+        });
+    }
     if (openInfoBtn && infoDialog) {
         openInfoBtn.addEventListener('click', () => {
             infoDialog.hidden = false;
