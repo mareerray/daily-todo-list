@@ -209,11 +209,16 @@ header {
 
 
 /* Positioning only — visual styling (background, border, hover)
-   stays in your existing .date-nav-btn rule. Fixed to the viewport
-   so they sit consistently just above the bottom nav.
+    stays in your existing .date-nav-btn rule. Fixed to the viewport
+    so they sit consistently just above the bottom nav.
 
-   IMPORTANT: .bottom-nav uses z-index: 1000 (see nav.css), so this
-   MUST be higher than 1000 or the nav bar will visually cover it. */
+    IMPORTANT: .bottom-nav uses z-index: 1000 (see nav.css), so this
+    MUST be higher than 1000 or the nav bar will visually cover it.
+
+    ALIGNMENT: .bottom-nav is centered with width: min(720px, 100%),
+    so on screens wider than 720px it does NOT touch the browser edges.
+    These buttons must align to the NAV BAR's edges, not the viewport's,
+   otherwise they drift away from it on wide screens/tablets. */
 
 .edge-nav-btn {
     position: fixed;
@@ -222,11 +227,11 @@ header {
 }
 
 .edge-nav-left {
-    left: 1rem;
+    left: max(1rem, calc(50% - 360px + 1rem)); /* 360px = half of nav's 720px max-width */
 }
 
 .edge-nav-right {
-    right: 1rem;
+    right: max(1rem, calc(50% - 360px + 1rem));
 }
 
 .date-nav-btn[hidden],
