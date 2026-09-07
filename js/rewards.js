@@ -16,7 +16,7 @@ const Rewards = (() => {
     setTimeout(() => {
       toast.classList.remove('reward-toast--visible');
       toast.addEventListener('transitionend', () => toast.remove(), { once: true });
-    }, 1200);
+    }, 1500);
   }
 
   function fireConfetti() {

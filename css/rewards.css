@@ -20,18 +20,20 @@
 
 .reward-toast--visible {
   opacity: 1;
-  animation: reward-pop-and-wiggle 1s ease-in-out forwards;
+  animation: reward-pop-and-wiggle 1.5s ease-in-out forwards;
 }
 
-/* Pop-in bounce, then wiggle twice, all in one continuous animation
-   so nothing conflicts with the opacity transition used for fade-out. */
+/* Pop-in, wiggle twice, then a gentle idle pulse to fill the remaining
+   time before fade-out — so there's no dead pause, just a soft breathing motion. */
 @keyframes reward-pop-and-wiggle {
   0%   { transform: translate(-50%, -50%) scale(0.4) rotate(-15deg); }
-  30%  { transform: translate(-50%, -50%) scale(1.15) rotate(5deg); }
-  45%  { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-  60%  { transform: translate(-50%, -50%) scale(1.08) rotate(-8deg); }
-  75%  { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-  90%  { transform: translate(-50%, -50%) scale(1.08) rotate(8deg); }
+  20%  { transform: translate(-50%, -50%) scale(1.15) rotate(5deg); }
+  30%  { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  40%  { transform: translate(-50%, -50%) scale(1.08) rotate(-8deg); }
+  50%  { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  60%  { transform: translate(-50%, -50%) scale(1.08) rotate(8deg); }
+  70%  { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  85%  { transform: translate(-50%, -50%) scale(1.05) rotate(0deg); }
   100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
 }
 
