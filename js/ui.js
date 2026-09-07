@@ -224,15 +224,15 @@ function applyTranslations() {
 // Open and close add todo dialog
 function openAddDialog() {
     document.getElementById('addDialog').hidden = false;
-    const todayFormatted = formatDateKey(new Date());
-    document.getElementById('addDialogDate_value').value = todayFormatted;
-    document.getElementById('addDialogDateText').textContent = todayFormatted;
-    setDateNavVisible(false); // NEW
+    const selectedFormatted = formatDateKey(getSelectedDate()); 
+    document.getElementById('addDialogDate_value').value = selectedFormatted;
+    document.getElementById('addDialogDateText').textContent = selectedFormatted;
+    setDateNavVisible(false); 
 }
 
 function closeAddDialog() {
     document.getElementById('addDialog').hidden = true;
-    setDateNavVisible(true); // NEW
+    setDateNavVisible(true); 
 }
 
 // Speech-to-text recording

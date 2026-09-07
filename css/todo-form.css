@@ -16,8 +16,8 @@
 
 .input-group {
     display: flex;
-    background: var(--clr-light);
-    border-radius: 12px;
+    background: var(--clr-light); 
+    border-radius: 8px;
     box-shadow: var(--bs);
     overflow: hidden;
     min-width: 0;
