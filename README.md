@@ -18,6 +18,7 @@ The simple version is kept as a standalone, dependency-free snapshot for anyone 
 - Add, delete, and complete tasks with priority levels (high, medium, low)
 - Filter and sort tasks by priority, status, and date
 - Calendar view with date-based navigation for daily planning
+- Color-coded calendar dots highlight incomplete tasks by status: overdue, due today, or upcoming
 - Voice input: add a task by speaking, transcribed via speech-to-text
 - Supports 11 languages for task management and calendar view
 - Installable as a Progressive Web App (PWA) on desktop and mobile

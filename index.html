@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A responsive daily task planner with priority levels, calendar view, and voice input.">
+    <meta name="description"
+        content="A responsive daily task planner with priority levels, calendar view, and voice input.">
     <link rel="icon" type="image/png" href="assets/icons/favicon.png">
     <link rel="apple-touch-icon" href="assets/icons/favicon.png">
     <link rel="manifest" href="manifest.vercel.json">
@@ -146,6 +147,8 @@
                     converted text in the input field, then tap + to add it as a task</li>
                 <li><strong>Set a date</strong> — use the calendar picker in the Add dialog, or the bottom-nav calendar
                     to browse by day</li>
+                <li><strong>Colored dots</strong> on the calendar show task status: pink for overdue, lavender for due
+                    today, yellow for upcoming.</li>
                 <li><strong>Change language</strong> — tap the globe icon for 11 supported languages</li>
                 <li><strong>Voice input</strong> — tap the mic icon and speak your task instead of typing</li>
                 <li><strong>Filter and sort</strong> — use the dropdown and sort button above your task list</li>
@@ -234,6 +237,14 @@
                 <div class="calendar-weekday">Sa</div>
             </div>
             <div id="calendarDays" class="calendar-days"></div>
+            <div class="calendar-legend">
+                <span class="legend-item"><span class="legend-dot has-overdue"></span> <span
+                        data-i18n="legend_overdue">Overdue</span></span>
+                <span class="legend-item"><span class="legend-dot has-today-task"></span> <span
+                        data-i18n="legend_today">Due today</span></span>
+                <span class="legend-item"><span class="legend-dot has-future"></span> <span
+                        data-i18n="legend_upcoming">Upcoming</span></span>
+            </div>
             <div class="calendar-footer">
                 <button id="calendarTodayBtn" class="calendar-today-btn">Today</button>
                 <button id="calendarCloseBtn" class="calendar-close-btn">Close</button>
