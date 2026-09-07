@@ -8,7 +8,7 @@ This project has two versions, deployed separately:
 
 | Version | Description | Stack | Live Link |
 |---|---|---|---|
-| **Full version (this repo)** | Complete app with speech-to-text for hands-free task input, calendar view, and 11-language support | Vanilla JS/HTML/CSS + Node.js serverless functions | [Deployed on Vercel](https://dailytodo-xi.vercel.app) |
+| **Full version (this repo)** | Complete app with speech-to-text for hands-free task input, calendar view, and 11-language support | Vanilla JS/HTML/CSS + Node.js serverless functions | [daily-todo-app(full version)](https://dailytodo-xi.vercel.app) |
 | **Simple version** | Lightweight core todo app with no backend dependencies | Vanilla JS/HTML/CSS only | [daily-todo-simple](https://mareerray.github.io/daily-todo-simple) |
 
 The simple version is kept as a standalone, dependency-free snapshot for anyone who wants to see the core todo logic without the added speech-feature complexity. This repository (`main` branch) is the actively developed, full-featured version.
