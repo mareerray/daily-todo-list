@@ -1,0 +1,51 @@
+/* rewards.css — visual styles for the reward toast + confetti burst */
+
+.reward-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)scale(0.85);
+  background: #1f2933;
+  color: #fff;
+  padding: 16px 28px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 9999;
+  pointer-events: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.reward-toast--visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.reward-confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9998;
+}
+
+.reward-confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 14px;
+  opacity: 0.9;
+  animation: reward-fall 1.6s ease-in forwards;
+}
+
+@keyframes reward-fall {
+  to {
+    top: 100vh;
+    transform: translateY(0) rotate(720deg);
+    opacity: 0;
+  }
+}
