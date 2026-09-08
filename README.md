@@ -15,11 +15,13 @@ The simple version is kept as a standalone, dependency-free snapshot for anyone 
 
 ## Features
 
-- Add, delete, and complete tasks with priority levels (high, medium, low)
+- Add, edit, delete, and complete tasks with priority levels (high, medium, low)
+- Reprioritize tasks by editing their priority level — doubles as manual reordering, since the list sorts by priority
 - Filter and sort tasks by priority, status, and date
 - Calendar view with date-based navigation for daily planning
 - Color-coded calendar dots highlight incomplete tasks by status: overdue, due today, or upcoming
 - Voice input: add a task by speaking, transcribed via speech-to-text
+- Celebration animation and confetti when a task is completed
 - Supports 11 languages for task management and calendar view
 - Installable as a Progressive Web App (PWA) on desktop and mobile
 - Responsive design tested across browsers, phones, tablets, and older devices
@@ -32,8 +34,6 @@ The simple version is kept as a standalone, dependency-free snapshot for anyone 
 
 ## Planned / In Progress
 
-- Edit existing tasks
-- Reorder tasks (drag-and-drop or manual sorting)
 - Voice playback (text-to-speech read-back of tasks)
 
 ## Tech Stack

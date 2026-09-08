@@ -7,6 +7,9 @@ function saveTodoToStorage(todo) {
     } else {
         todos = JSON.parse(localStorage.getItem('todos'));
     }
+    if (!todo.id) {
+        todo.id = Date.now() + Math.random().toString(36).slice(2, 7); // unique ID
+    }
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
 }
@@ -21,21 +24,23 @@ function getTodosFromStorage() {
     return todos;
 }
 
-function removeTodoFromStorage(todoText) {
-    let todos;
-    if (localStorage.getItem('todos') === null) {
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem('todos'));
-    }
-    const todoIndex = todos.findIndex(t => {
-        const text = typeof t === 'string' ? t : t.text;
-        return text === todoText;
-    });
+function removeTodoFromStorage(todoId) {
+    let todos = getTodosFromStorage();
+    const todoIndex = todos.findIndex(t => t.id === todoId);
     if (todoIndex > -1) {
         todos.splice(todoIndex, 1);
     }
     localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function updateTodoInStorage(todoId, updates) {
+    let todos = getTodosFromStorage();
+    const todoIndex = todos.findIndex(t => t.id === todoId);
+    if (todoIndex > -1) {
+        todos[todoIndex] = { ...todos[todoIndex], ...updates };
+    }
+    localStorage.setItem('todos', JSON.stringify(todos));
+    return todoIndex > -1 ? todos[todoIndex] : null;
 }
 
 function getTodosForDate(dateKey) {

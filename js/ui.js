@@ -223,16 +223,25 @@ function applyTranslations() {
 
 // Open and close add todo dialog
 function openAddDialog() {
+    editingTodoId = null; // ensure we're in "add new" mode, not leftover edit mode
+    closeEditDialog(); // ensure any open edit dialog is closed
+
     document.getElementById('addDialog').hidden = false;
-    const selectedFormatted = formatDateKey(getSelectedDate()); 
+    const selectedFormatted = formatDateKey(getSelectedDate());
+
     document.getElementById('addDialogDate_value').value = selectedFormatted;
+
     document.getElementById('addDialogDateText').textContent = selectedFormatted;
-    setDateNavVisible(false); 
+
+    const dialogTitle = document.getElementById('dialogTitle');
+    if (dialogTitle) dialogTitle.textContent = t('dialog_add_task_title') || 'Add a task';
+
+    setDateNavVisible(false);
 }
 
 function closeAddDialog() {
     document.getElementById('addDialog').hidden = true;
-    setDateNavVisible(true); 
+    setDateNavVisible(true);
 }
 
 // Speech-to-text recording
