@@ -224,7 +224,6 @@ function applyTranslations() {
 // Open and close add todo dialog
 function openAddDialog() {
     editingTodoId = null; // ensure we're in "add new" mode, not leftover edit mode
-    closeEditDialog(); // ensure any open edit dialog is closed
 
     document.getElementById('addDialog').hidden = false;
     const selectedFormatted = formatDateKey(getSelectedDate());

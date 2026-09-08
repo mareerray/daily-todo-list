@@ -159,9 +159,9 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-.has-overdue::after,
-.has-today-task::after,
-.has-future::after {
+.calendar-day.has-overdue::after,
+.calendar-day.has-today-task::after,
+.calendar-day.has-future::after {
     content: '';
     position: absolute;
     bottom: 4px;
@@ -174,9 +174,9 @@
     z-index: 1;
 }
 
-.has-overdue::after { background-color: var(--clr-cal-overdue); }
-.has-today-task::after { background-color: var(--clr-cal-today); }
-.has-future::after { background-color: var(--clr-cal-future); }
+.calendar-day.has-overdue::after { background-color: var(--clr-cal-overdue); }
+.calendar-day.has-today-task::after { background-color: var(--clr-cal-today); }
+.calendar-day.has-future::after { background-color: var(--clr-cal-future); }
 
 
 .calendar-legend {
