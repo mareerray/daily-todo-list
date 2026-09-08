@@ -207,6 +207,19 @@ header {
     font-family: var(--ff-secondary);
 }
 
+.date-flip {
+  display: inline-block;
+  animation: flipDate 0.4s ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes flipDate {
+  0% { transform: rotateX(0deg); opacity: 1; }
+  50% { transform: rotateX(-90deg); opacity: 0.2; }
+  51% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); opacity: 1; }
+}
+
 
 /* Positioning only — visual styling (background, border, hover)
     stays in your existing .date-nav-btn rule. Fixed to the viewport
