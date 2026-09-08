@@ -18,6 +18,7 @@ The simple version is kept as a standalone, dependency-free snapshot for anyone 
 - Add, edit, delete, and complete tasks with priority levels (high, medium, low)
 - Reprioritize tasks by editing their priority level — doubles as manual reordering, since the list sorts by priority
 - Filter and sort tasks by priority, status, and date
+- Swipe left/right on touchscreen devices to move between days (phones, tablets, touchscreen laptops); arrow buttons handle date navigation on desktop/trackpad
 - Calendar view with date-based navigation for daily planning
 - Color-coded calendar dots highlight incomplete tasks by status: overdue, due today, or upcoming
 - Voice input: add a task by speaking, transcribed via speech-to-text
@@ -35,6 +36,7 @@ The simple version is kept as a standalone, dependency-free snapshot for anyone 
 ## Planned / In Progress
 
 - Voice playback (text-to-speech read-back of tasks)
+- Optional due time for tasks
 
 ## Tech Stack
 
