@@ -10,17 +10,15 @@
 
 .todo {
     margin: 0.5rem;
-    /* background: var(--clr-light); */
     color: var(--clr-light);
     font-size: var(--fs-body-small);
     font-weight: var(--fw-bold);
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto auto auto;
     align-items: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease, opacity 0.4s ease;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    /* box-shadow: var(--bs);  */
     border-left: 6px solid var(--clr-btn-accent);
 }
 
@@ -110,11 +108,11 @@
 }
 
 .trash-btn,
-.complete-btn {
+.complete-btn, .edit-btn {
     background: transparent;
     color: var(--clr-btn-accent);
     border: none;
-    padding: 0.5rem 0.6rem;
+    padding: 0.5rem 0.5rem;
     cursor: pointer;
     font-size: var(--fs-icon);
     transition: transform 0.15s ease, color 0.2s ease, filter 0.2s ease;
@@ -128,6 +126,10 @@
     color: rgb(73, 204, 73);
 }
 
+.edit-btn {
+    color: #a8a8a8;
+}
+
 .trash-btn:hover {
     color: #ff5722;
     transform: translateY(-2px) scale(1.1);
@@ -135,6 +137,11 @@
 
 .complete-btn:hover {
     color: rgb(56, 180, 56);
+    transform: translateY(-2px) scale(1.1);
+}
+
+.edit-btn:hover {
+    color: var(--clr-btn-accent);
     transform: translateY(-2px) scale(1.1);
 }
 
@@ -148,7 +155,8 @@
 }
 
 .trash-btn i,
-.complete-btn i {
+.complete-btn i,
+.edit-btn i {
     pointer-events: none;
 }
 

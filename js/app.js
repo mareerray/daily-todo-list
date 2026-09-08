@@ -1,6 +1,9 @@
 // app.js - Main application initialization
 
 async function initializeApp() {
+    // One-time migration: give any existing todos (saved before IDs existed) a unique ID.
+    migrateTodoIds();
+
     // Load translations first
     await loadTranslations();
     
@@ -29,6 +32,23 @@ function checkFirstVisit() {
 
     if (!localStorage.getItem('hasVisitedBefore')) {
         welcomeDialog.hidden = false;
+    }
+}
+
+// One-time migration: give any existing todos (saved before IDs existed) a unique ID.
+// Call this once during app init, before anything else touches todos.
+
+function migrateTodoIds() {
+    const todos = getTodosFromStorage();
+    let changed = false;
+    todos.forEach(todo => {
+        if (!todo.id) {
+            todo.id = Date.now() + Math.random().toString(36).slice(2, 7);
+            changed = true;
+        }
+    });
+    if (changed) {
+        localStorage.setItem('todos', JSON.stringify(todos));
     }
 }
 
