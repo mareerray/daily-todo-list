@@ -28,6 +28,41 @@ function initCalendar() {
     calendarOverlay.addEventListener('click', (e) => {
         if (e.target === calendarOverlay) closeCalendar();
     });
+
+    initSwipeNavigation();
+}
+
+function initSwipeNavigation() {
+    const swipeTarget = document.body;
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const SWIPE_THRESHOLD = 50;
+
+    swipeTarget.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    swipeTarget.addEventListener('touchend', (e) => {
+        if (calendarOverlay.classList.contains('active')) return;
+        const addDialog = document.getElementById('addDialog');
+        if (addDialog && !addDialog.hidden) return;
+
+        const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+
+        if (Math.abs(deltaX) < SWIPE_THRESHOLD) return;
+        if (Math.abs(deltaX) < Math.abs(deltaY) * 1.5) return;
+
+        if (deltaX < 0) {
+            changeDate(1);
+        } else {
+            changeDate(-1);
+        }
+    }, { passive: true });
 }
 
 function openCalendar(mode = 'home') {
