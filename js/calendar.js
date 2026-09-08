@@ -226,6 +226,10 @@ function updateDateDisplay() {
     } else {
         selectedDateDisplay.textContent = selectedDate.toLocaleDateString(locale, options);
     }
+
+    selectedDateDisplay.classList.remove('date-flip');
+    void selectedDateDisplay.offsetWidth;
+    selectedDateDisplay.classList.add('date-flip');
 }
 
 function formatDateKey(date) {
