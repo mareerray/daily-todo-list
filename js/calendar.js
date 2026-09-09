@@ -18,7 +18,6 @@ const calendarTodayBtn = document.getElementById('calendarTodayBtn');
 const calendarCloseBtn = document.getElementById('calendarCloseBtn');
 
 function initCalendar() {
-    // calendarBtn.addEventListener('click', openCalendar);
     prevDateBtn.addEventListener('click', () => changeDate(-1));
     nextDateBtn.addEventListener('click', () => changeDate(1));
     prevMonthBtn.addEventListener('click', () => changeCalendarMonth(-1));
@@ -241,4 +240,10 @@ function formatDateKey(date) {
 
 function getSelectedDate() {
     return selectedDate;
+}
+
+// Updates the currently selected day from another feature, such as search.
+function setSelectedDate(date) {
+    selectedDate = new Date(date);
+    currentCalendarMonth = new Date(date);
 }
