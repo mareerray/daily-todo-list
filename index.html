@@ -113,29 +113,49 @@
     </div>
 
     <!-- COMPLETE-CONFIRM DIALOG -->
-<div id="completeDialog" class="dialog-overlay" hidden>
-    <div class="dialog-box">
-        <h3 id="completeDialogTitle" class="dialog-title">Complete task?</h3>
+    <div id="completeDialog" class="dialog-overlay" hidden>
+        <div class="dialog-box">
+            <h3 id="completeDialogTitle" class="dialog-title">Complete task?</h3>
 
-        <p id="completeDialogTaskText" class="welcome-text"></p>
+            <p id="completeDialogTaskText" class="welcome-text"></p>
 
-        <div class="input-group">
-            <button id="completeOnlyBtn" type="button" class="todo-button">
-                <i class="bi bi-check-circle-fill"></i>
-                <span>Mark complete</span>
-            </button>
+            <div class="input-group">
+                <button id="completeOnlyBtn" type="button" class="todo-button">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>Mark complete</span>
+                </button>
 
-            <button id="completeAndRepeatBtn" type="button" class="todo-button">
-                <i class="bi bi-arrow-repeat"></i>
-                <span>Complete &amp; repeat tomorrow</span>
-            </button>
+                <button id="completeAndRepeatBtn" type="button" class="todo-button">
+                    <i class="bi bi-arrow-repeat"></i>
+                    <span>Complete &amp; repeat tomorrow</span>
+                </button>
 
-            <button id="completeCancelBtn" type="button" class="dialog-cancel">
-                Cancel
-            </button>
+                <button id="completeCancelBtn" type="button" class="dialog-cancel">
+                    Cancel
+                </button>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- DELETE-CONFIRM DIALOG -->
+    <div id="deleteDialog" class="dialog-overlay" hidden>
+        <div class="dialog-box">
+            <h3 id="deleteDialogTitle" class="dialog-title">Delete task?</h3>
+
+            <p id="deleteDialogTaskText" class="welcome-text"></p>
+
+            <div class="input-group">
+                <button id="deleteConfirmBtn" type="button" class="dialog-cancel">
+                    <i class="bi bi-trash-fill"></i>
+                    <span>Delete</span>
+                </button>
+
+                <button id="deleteCancelBtn" type="button" class="todo-button">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- WELCOME DIALOG (first-time users only) -->
     <div id="welcomeDialog" class="dialog-overlay" hidden>
@@ -147,7 +167,8 @@
                     then tap <strong>+</strong> to add it</li>
                 <li>Choose a priority: 🔴 High, 🟡 Medium, or 🔵 Low</li>
                 <li>Use the calendar icon to plan tasks for any date</li>
-                <li>Tap a task to mark it done, or tap 🗑️ to delete it</li>
+                <li>Tap the check button to mark a task done — you can also choose to repeat it tomorrow</li>
+                <li>Tap 🗑️ to delete a task, then confirm to remove it</li>
             </ul>
             <button id="closeWelcomeBtn" type="button" class="todo-button">Get Started</button>
         </div>
@@ -173,6 +194,9 @@
                     converted text in the input field, then tap + to add it as a task</li>
                 <li><strong>Set a date</strong> — use the calendar picker in the Add dialog, or the bottom-nav calendar
                     to browse by day</li>
+                <li><strong>Complete a task</strong> — tap the check button; choose to mark it done, or mark done and
+                    repeat it tomorrow</li>
+                <li><strong>Delete a task</strong> — tap the trash button and confirm to remove it permanently</li>
                 <li><strong>Colored dots</strong> on the calendar show task status: pink for overdue, lavender for due
                     today, yellow for upcoming.</li>
                 <li><strong>Change language</strong> — tap the globe icon for 11 supported languages</li>

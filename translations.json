@@ -68,7 +68,14 @@
             "dialog_select_date": "Datum wählen",
             "dialog_add_button": "Hinzufügen",
             "dialog_cancel_button": "Abbrechen",
-            "add_task_button": "Aufgabe hinzufügen"
+            "add_task_button": "Aufgabe hinzufügen",
+            "dialog_complete_task_title": "Aufgabe erledigen?",
+            "dialog_complete_task_text": "Möchten Sie \"{task}\" als erledigt markieren?",
+            "dialog_complete_only": "Als erledigt markieren",
+            "dialog_complete_and_repeat": "Erledigt & morgen wiederholen",
+            "dialog_delete_task_title": "Aufgabe löschen?",
+            "dialog_delete_task_text": "Möchten Sie \"{task}\" wirklich löschen?",
+            "dialog_delete_confirm": "Löschen"
         },
         "en": {
             "input_add_placeholder": "Add a new task ...",
@@ -125,7 +132,14 @@
             "dialog_select_date": "Select date",
             "dialog_add_button": "Add task",
             "dialog_cancel_button": "Cancel",
-            "add_task_button": "Add Task"
+            "add_task_button": "Add Task",
+            "dialog_complete_task_title": "Complete task?",
+            "dialog_complete_task_text": "Mark \"{task}\" as complete?",
+            "dialog_complete_only": "Mark complete",
+            "dialog_complete_and_repeat": "Complete & repeat tomorrow",
+            "dialog_delete_task_title": "Delete task?",
+            "dialog_delete_task_text": "Are you sure you want to delete \"{task}\"?",
+            "dialog_delete_confirm": "Delete"
         },
         "es": {
             "input_add_placeholder": "Agregar una nueva tarea ...",
@@ -182,7 +196,14 @@
             "dialog_select_date": "Seleccionar fecha",
             "dialog_add_button": "Agregar",
             "dialog_cancel_button": "Cancelar",
-            "add_task_button": "Añadir tarea"
+            "add_task_button": "Añadir tarea",
+            "dialog_complete_task_title": "¿Completar tarea?",
+            "dialog_complete_task_text": "¿Marcar \"{task}\" como completada?",
+            "dialog_complete_only": "Marcar como completada",
+            "dialog_complete_and_repeat": "Completar y repetir mañana",
+            "dialog_delete_task_title": "¿Eliminar tarea?",
+            "dialog_delete_task_text": "¿Seguro que deseas eliminar \"{task}\"?",
+            "dialog_delete_confirm": "Eliminar"
         },
         "fi": {
             "input_add_placeholder": "Lisää uusi tehtävä ...",
@@ -239,7 +260,14 @@
             "dialog_select_date": "Valitse päivä",
             "dialog_add_button": "Lisää",
             "dialog_cancel_button": "Peruuta",
-            "add_task_button": "Lisää tehtävä"
+            "add_task_button": "Lisää tehtävä",
+            "dialog_complete_task_title": "Merkitäänkö tehtävä valmiiksi?",
+            "dialog_complete_task_text": "Merkitäänkö \"{task}\" valmiiksi?",
+            "dialog_complete_only": "Merkitse valmiiksi",
+            "dialog_complete_and_repeat": "Valmis ja toista huomenna",
+            "dialog_delete_task_title": "Poistetaanko tehtävä?",
+            "dialog_delete_task_text": "Haluatko varmasti poistaa \"{task}\"?",
+            "dialog_delete_confirm": "Poista"
         },
         "it": {
             "input_add_placeholder": "Aggiungi una nuova attività ...",
@@ -296,7 +324,14 @@
             "dialog_select_date": "Seleziona data",
             "dialog_add_button": "Aggiungi",
             "dialog_cancel_button": "Annulla",
-            "add_task_button": "Aggiungi attività"
+            "add_task_button": "Aggiungi attività",
+            "dialog_complete_task_title": "Completare l'attività?",
+            "dialog_complete_task_text": "Contrassegnare \"{task}\" come completata?",
+            "dialog_complete_only": "Segna come completata",
+            "dialog_complete_and_repeat": "Completa e ripeti domani",
+            "dialog_delete_task_title": "Eliminare l'attività?",
+            "dialog_delete_task_text": "Sei sicuro di voler eliminare \"{task}\"?",
+            "dialog_delete_confirm": "Elimina"
         },
         "ja": {
             "input_add_placeholder": "新しいタスクを追加 ...",
@@ -353,7 +388,14 @@
             "dialog_select_date": "日付を選択",
             "dialog_add_button": "追加",
             "dialog_cancel_button": "キャンセル",
-            "add_task_button": "タスクを追加"
+            "add_task_button": "タスクを追加",
+            "dialog_complete_task_title": "タスクを完了しますか？",
+            "dialog_complete_task_text": "「{task}」を完了としてマークしますか？",
+            "dialog_complete_only": "完了にする",
+            "dialog_complete_and_repeat": "完了して明日も繰り返す",
+            "dialog_delete_task_title": "タスクを削除しますか？",
+            "dialog_delete_task_text": "「{task}」を削除してもよろしいですか？",
+            "dialog_delete_confirm": "削除"
         },
         "ko": {
             "input_add_placeholder": "새 작업을 추가 ...",
@@ -410,7 +452,14 @@
             "dialog_select_date": "날짜 선택",
             "dialog_add_button": "추가",
             "dialog_cancel_button": "취소",
-            "add_task_button": "작업 추가"
+            "add_task_button": "작업 추가",
+            "dialog_complete_task_title": "작업을 완료하시겠습니까?",
+            "dialog_complete_task_text": "\"{task}\"을(를) 완료로 표시하시겠습니까?",
+            "dialog_complete_only": "완료로 표시",
+            "dialog_complete_and_repeat": "완료 및 내일 반복",
+            "dialog_delete_task_title": "작업을 삭제하시겠습니까?",
+            "dialog_delete_task_text": "\"{task}\"을(를) 삭제하시겠습니까?",
+            "dialog_delete_confirm": "삭제"
         },
         "ru": {
             "input_add_placeholder": "Добавьте новую задачу ...",
@@ -467,7 +516,14 @@
             "dialog_select_date": "Выберите дату",
             "dialog_add_button": "Добавить",
             "dialog_cancel_button": "Отмена",
-            "add_task_button": "Добавить задачу"
+            "add_task_button": "Добавить задачу",
+            "dialog_complete_task_title": "Завершить задачу?",
+            "dialog_complete_task_text": "Отметить \"{task}\" как выполненную?",
+            "dialog_complete_only": "Отметить как выполненную",
+            "dialog_complete_and_repeat": "Завершить и повторить завтра",
+            "dialog_delete_task_title": "Удалить задачу?",
+            "dialog_delete_task_text": "Вы уверены, что хотите удалить \"{task}\"?",
+            "dialog_delete_confirm": "Удалить"
         },
         "sv": {
             "input_add_placeholder": "Lägg till en ny uppgift ...",
@@ -524,7 +580,14 @@
             "dialog_select_date": "Välj datum",
             "dialog_add_button": "Lägg till",
             "dialog_cancel_button": "Avbryt",
-            "add_task_button": "Lägg till uppgift"
+            "add_task_button": "Lägg till uppgift",
+            "dialog_complete_task_title": "Slutföra uppgiften?",
+            "dialog_complete_task_text": "Markera \"{task}\" som slutförd?",
+            "dialog_complete_only": "Markera som slutförd",
+            "dialog_complete_and_repeat": "Slutför & upprepa imorgon",
+            "dialog_delete_task_title": "Ta bort uppgiften?",
+            "dialog_delete_task_text": "Är du säker på att du vill ta bort \"{task}\"?",
+            "dialog_delete_confirm": "Ta bort"
         },
         "th": {
             "input_add_placeholder": "เพิ่มงานใหม่ ...",
@@ -581,7 +644,14 @@
             "dialog_select_date": "เลือกวันที่",
             "dialog_add_button": "เพิ่ม",
             "dialog_cancel_button": "ยกเลิก",
-            "add_task_button": "เพิ่มงาน"
+            "add_task_button": "เพิ่มงาน",
+            "dialog_complete_task_title": "ทำเครื่องหมายว่าเสร็จสิ้นหรือไม่?",
+            "dialog_complete_task_text": "ทำเครื่องหมาย \"{task}\" ว่าเสร็จสิ้นหรือไม่?",
+            "dialog_complete_only": "ทำเครื่องหมายว่าเสร็จสิ้น",
+            "dialog_complete_and_repeat": "เสร็จสิ้นและทำซ้ำพรุ่งนี้",
+            "dialog_delete_task_title": "ลบงานนี้หรือไม่?",
+            "dialog_delete_task_text": "คุณแน่ใจหรือไม่ว่าต้องการลบ \"{task}\"?",
+            "dialog_delete_confirm": "ลบ"
         },
         "uk": {
             "input_add_placeholder": "Додайте нове завдання ...",
@@ -638,7 +708,14 @@
             "dialog_select_date": "Виберіть дату",
             "dialog_add_button": "Додати",
             "dialog_cancel_button": "Скасувати",
-            "add_task_button": "Додати завдання"
+            "add_task_button": "Додати завдання",
+            "dialog_complete_task_title": "Завершити завдання?",
+            "dialog_complete_task_text": "Позначити \"{task}\" як виконане?",
+            "dialog_complete_only": "Позначити як виконане",
+            "dialog_complete_and_repeat": "Завершити й повторити завтра",
+            "dialog_delete_task_title": "Видалити завдання?",
+            "dialog_delete_task_text": "Ви впевнені, що хочете видалити \"{task}\"?",
+            "dialog_delete_confirm": "Видалити"
         }
     }
 }

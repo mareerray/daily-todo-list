@@ -16,6 +16,8 @@ The simple version is kept as a standalone, dependency-free snapshot for anyone 
 ## Features
 
 - Add, edit, delete, and complete tasks with priority levels (high, medium, low)
+- Confirm dialog on completing a task, with an option to repeat the same task tomorrow
+- Confirm dialog before deleting a task, to prevent accidental removal
 - Reprioritize tasks by editing their priority level — doubles as manual reordering, since the list sorts by priority
 - Filter and sort tasks by priority, status, and date
 - Swipe left/right on touchscreen devices to move between days (phones, tablets, touchscreen laptops); arrow buttons handle date navigation on desktop/trackpad
