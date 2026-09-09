@@ -15,6 +15,11 @@ function initTodos() {
     todoList.addEventListener('click', deleteCheck);
     filterOption.addEventListener('click', filterTodo);
     sortBtn.addEventListener('click', sortTodo);
+
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => renderSearchResults(e.target.value));
+    }
 }
 
 function addTodo(event) {
@@ -218,6 +223,64 @@ function performDelete(todoId) {
             displayTodosForDate(getSelectedDate());
         }
     });
+}
+
+function openSearchDialog() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('searchResultsList').innerHTML = '';
+    document.getElementById('searchDialog').hidden = false;
+    document.getElementById('searchInput').focus();
+}
+
+function closeSearchDialog() {
+    const searchDialog = document.getElementById('searchDialog');
+    if (searchDialog) {
+        searchDialog.hidden = true;
+    }
+}
+
+function renderSearchResults(keyword) {
+    const resultsList = document.getElementById('searchResultsList');
+    resultsList.innerHTML = '';
+
+    if (keyword.trim() === '') return;
+
+    const matches = searchTodos(keyword);
+
+    if (matches.length === 0) {
+        const emptyMsg = document.createElement('li');
+        emptyMsg.classList.add('empty-message');
+        emptyMsg.textContent = t('No results for this search') || 'No matching tasks';
+        resultsList.appendChild(emptyMsg);
+        return;
+    }
+
+    matches.forEach(todo => {
+        const todoDiv = document.createElement('div');
+        todoDiv.classList.add('todo');
+        todoDiv.dataset.priority = todo.priority;
+        if (todo.completed) todoDiv.classList.add('completed');
+
+        const dateLabel = document.createElement('span');
+        dateLabel.classList.add('search-result-date');
+        dateLabel.textContent = todo.dueDate;
+        todoDiv.appendChild(dateLabel);
+
+        const taskText = document.createElement('li');
+        taskText.classList.add('todo-item');
+        taskText.innerText = todo.text;
+        todoDiv.appendChild(taskText);
+
+        resultsList.appendChild(todoDiv);
+    });
+}
+
+function searchTodos(keyword) {
+    const todos = getTodosFromStorage();
+    const lower = keyword.toLowerCase();
+    return todos
+        .filter(t => t.text.toLowerCase().includes(lower))
+        .sort((a, b) => a.dueDate.localeCompare(b.dueDate));
 }
 
 function displayTodosForDate(date) {
