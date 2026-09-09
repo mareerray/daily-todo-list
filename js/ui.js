@@ -10,77 +10,110 @@ function setDateNavVisible(visible) {
 }
 
 function initUI() {
-    const openInfoBtn = document.getElementById('openInfoBtn');
-    const closeInfoDialogBtn = document.getElementById('closeInfoDialog');
-    const infoDialog = document.getElementById('infoDialog');
-
-    const closeWelcomeBtn = document.getElementById('closeWelcomeBtn');
+    // ----- Welcome dialog -----
     const welcomeDialog = document.getElementById('welcomeDialog');
+    const closeWelcomeBtn = document.getElementById('closeWelcomeBtn');
+
     if (closeWelcomeBtn && welcomeDialog) {
         closeWelcomeBtn.addEventListener('click', () => {
             welcomeDialog.hidden = true;
             localStorage.setItem('hasVisitedBefore', 'true');
         });
     }
+
+    // ----- Info dialog -----
+    const infoDialog = document.getElementById('infoDialog');
+    const openInfoBtn = document.getElementById('openInfoBtn');
+    const closeInfoDialogBtn = document.getElementById('closeInfoDialog');
+
     if (openInfoBtn && infoDialog) {
         openInfoBtn.addEventListener('click', () => {
             infoDialog.hidden = false;
         });
     }
+
     if (closeInfoDialogBtn && infoDialog) {
         closeInfoDialogBtn.addEventListener('click', () => {
             infoDialog.hidden = true;
         });
     }
+
+    // ----- Search dialog -----
+    const searchCloseBtn = document.getElementById('searchCloseBtn');
+
+    if (searchCloseBtn) {
+        searchCloseBtn.addEventListener('click', closeSearchDialog);
+    }
+
+    // ----- Add/edit task dialog -----
+    const addDialog = document.getElementById('addDialog');
+    const openAddDialogBtn = document.getElementById('openAddDialogBtn');
+    const closeAddDialogBtn = document.getElementById('closeAddDialog');
+    const dialogAddButton = document.getElementById('dialogAddButton');
+    const addDialogDateBtn = document.getElementById('addDialogDateBtn');
+
+    // Open the task dialog from the top add button.
+    if (openAddDialogBtn) {
+        openAddDialogBtn.addEventListener('click', openAddDialog);
+    }
+
+    // Close the task dialog if a close button exists.
+    if (closeAddDialogBtn) {
+        closeAddDialogBtn.addEventListener('click', closeAddDialog);
+    }
+
+    // Close the task dialog when the user clicks its backdrop.
+    if (addDialog) {
+        addDialog.addEventListener('click', (e) => {
+            if (e.target === addDialog) {
+                closeAddDialog();
+            }
+        });
+    }
+
+    // Save a new task or save edits from the dialog.
+    if (dialogAddButton) {
+        dialogAddButton.addEventListener('click', addTodoFromDialog);
+    }
+
+    // Open the calendar while choosing a due date.
+    if (addDialogDateBtn) {
+        addDialogDateBtn.addEventListener('click', () => {
+            openCalendar('dialog');
+        });
+    }
+
+    // ----- Voice input -----
+    const micButton = document.getElementById('micButton');
+
+    if (micButton) {
+        micButton.addEventListener('click', toggleRecording);
+    }
+
+    // ----- Language menu -----
     if (languageButton) {
         languageButton.addEventListener('click', toggleLanguageMenu);
     }
+
     if (languageMenu) {
         languageMenu.addEventListener('click', onLanguageMenuClick);
     }
+
+    // Close the language menu when clicking outside it.
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.language-menu-wrapper')) {
             hideLanguageMenu();
         }
     });
+
+    // Close temporary UI when the user presses Escape.
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             hideLanguageMenu();
             closeCalendar();
+            closeSearchDialog();
         }
     });
-
-    const closeAddDialogBtn = document.getElementById('closeAddDialog');
-    if (closeAddDialogBtn) {
-        closeAddDialogBtn.addEventListener('click', closeAddDialog);
-    }
-
-    const addDialog = document.getElementById('addDialog');
-    if (addDialog) {
-        addDialog.addEventListener('click', (e) => {
-            if (e.target.id === 'addDialog') closeAddDialog();
-        });
-    }
-
-    const dialogAddButton = document.getElementById('dialogAddButton');
-    if (dialogAddButton) {
-        dialogAddButton.addEventListener('click', addTodoFromDialog);
-    }
-
-    const addDialogDateBtn = document.getElementById('addDialogDateBtn');
-    if (addDialogDateBtn) {
-        addDialogDateBtn.addEventListener('click', () => openCalendar('dialog'));
-    }
-
-    const micButton = document.getElementById('micButton');
-    if (micButton) {
-        micButton.addEventListener('click', toggleRecording);
-    }
-
-    const openAddDialogBtn = document.getElementById('openAddDialogBtn');
-    if (openAddDialogBtn) {
-        openAddDialogBtn.addEventListener('click', openAddDialog);
-    }
 }
 
 function toggleLanguageMenu() {
@@ -119,136 +152,6 @@ function setActiveLanguageItem() {
             item.classList.remove('active');
         }
     });
-}
-
-function applyTranslations() {
-    const inputEls = document.querySelectorAll('.todo-input');
-    inputEls.forEach(inputEl => {
-        inputEl.placeholder = t('input_add_placeholder');
-    });
-
-    const filterEl = document.querySelector('.filter-todo');
-    if (filterEl) {
-        filterEl.querySelectorAll('option').forEach(opt => {
-            const val = opt.value;
-            if (val === 'all') opt.textContent = t('filter_all');
-            else if (val === 'completed') opt.textContent = t('filter_completed');
-            else if (val === 'uncompleted') opt.textContent = t('filter_uncompleted');
-            else if (val === 'high') opt.textContent = t('filter_high');
-            else if (val === 'medium') opt.textContent = t('filter_medium');
-            else if (val === 'low') opt.textContent = t('filter_low');
-        });
-    }
-
-    const sortBtn = document.querySelector('.sort-btn');
-    if (sortBtn) sortBtn.innerHTML = `<i class="bi bi-sort-down fs-4"></i> ${t('sort_priority')}`;
-
-    if (languageButton) languageButton.title = t('language_hint');
-
-    const prioritySelects = document.querySelectorAll('.priority-select');
-    prioritySelects.forEach(prioritySelect => {
-        prioritySelect.querySelectorAll('option').forEach(opt => {
-            if (opt.value === 'high') {
-                opt.textContent = `🔴 ${t('priority_label_high')}`;
-                opt.title = `${t('priority_label_high')} - ${t('legend_high_desc')}`;
-            } else if (opt.value === 'medium') {
-                opt.textContent = `🟡 ${t('priority_label_medium')}`;
-                opt.title = `${t('priority_label_medium')} - ${t('legend_medium_desc')}`;
-            } else if (opt.value === 'low') {
-                opt.textContent = `🔵 ${t('priority_label_low')}`;
-                opt.title = `${t('priority_label_low')} - ${t('legend_low_desc')}`;
-            }
-        });
-    });
-
-    const legend = document.querySelector('.priority-legend');
-    if (legend) {
-        const items = legend.querySelectorAll('.legend-item');
-        items.forEach(item => {
-            const dot = item.querySelector('.legend-dot');
-            if (!dot) return;
-            const isHigh = dot.classList.contains('high');
-            const isMed = dot.classList.contains('medium');
-            const isLow = dot.classList.contains('low');
-            if (isHigh) {
-                item.innerHTML = `<span class="legend-dot high"></span> ${t('legend_high_desc')}`;
-            } else if (isMed) {
-                item.innerHTML = `<span class="legend-dot medium"></span> ${t('legend_medium_desc')}`;
-            } else if (isLow) {
-                item.innerHTML = `<span class="legend-dot low"></span> ${t('legend_low_desc')}`;
-            }
-        });
-    }
-
-    const calendarTodayBtn = document.getElementById('calendarTodayBtn');
-    const calendarCloseBtn = document.getElementById('calendarCloseBtn');
-    if (calendarTodayBtn) calendarTodayBtn.textContent = t('calendar_today');
-    if (calendarCloseBtn) calendarCloseBtn.textContent = t('calendar_close');
-
-    const calendarLegend = document.querySelector('.calendar-legend');
-    if (calendarLegend) {
-        const overdueSpan = calendarLegend.querySelector('[data-i18n="legend_overdue"]');
-        const todaySpan = calendarLegend.querySelector('[data-i18n="legend_today"]');
-        const upcomingSpan = calendarLegend.querySelector('[data-i18n="legend_upcoming"]');
-        if (overdueSpan) overdueSpan.textContent = t('legend_overdue');
-        if (todaySpan) todaySpan.textContent = t('legend_today');
-        if (upcomingSpan) upcomingSpan.textContent = t('legend_upcoming');
-    }
-
-    const dialogTitle = document.getElementById('dialogTitle');
-    if (dialogTitle) dialogTitle.textContent = t('dialog_add_task_title');
-
-    const completeDialogTitle = document.getElementById('completeDialogTitle');
-    if (completeDialogTitle) completeDialogTitle.textContent = t('dialog_complete_task_title');
-
-    const completeOnlyBtn = document.getElementById('completeOnlyBtn');
-    if (completeOnlyBtn) {
-        const span = completeOnlyBtn.querySelector('span');
-        if (span) span.textContent = t('dialog_complete_only');
-    }
-
-    const completeAndRepeatBtn = document.getElementById('completeAndRepeatBtn');
-    if (completeAndRepeatBtn) {
-        const span = completeAndRepeatBtn.querySelector('span');
-        if (span) span.textContent = t('dialog_complete_and_repeat');
-    }
-
-    const completeCancelBtn = document.getElementById('completeCancelBtn');
-    if (completeCancelBtn) completeCancelBtn.textContent = t('dialog_cancel_button');
-
-    const deleteDialogTitle = document.getElementById('deleteDialogTitle');
-    if (deleteDialogTitle) deleteDialogTitle.textContent = t('dialog_delete_task_title');
-
-    const deleteConfirmBtn = document.getElementById('deleteConfirmBtn');
-    if (deleteConfirmBtn) {
-        const span = deleteConfirmBtn.querySelector('span');
-        if (span) span.textContent = t('dialog_delete_confirm');
-    }
-
-    const deleteCancelBtn = document.getElementById('deleteCancelBtn');
-    if (deleteCancelBtn) deleteCancelBtn.textContent = t('dialog_cancel_button');
-
-    const dialogPriorityLabel = document.getElementById('dialogPriorityLabel');
-    if (dialogPriorityLabel) dialogPriorityLabel.textContent = t('dialog_choose_priority');
-
-    const dialogAddBtn = document.getElementById('dialogAddButton');
-    if (dialogAddBtn) dialogAddBtn.title = t('dialog_add_button');
-
-    const dialogCancelBtn = document.getElementById('closeAddDialog');
-    if (dialogCancelBtn) dialogCancelBtn.textContent = t('dialog_cancel_button');
-
-    const dialogDateText = document.getElementById('addDialogDateText');
-    if (dialogDateText && !dialogDateText.textContent.match(/^\d{4}-\d{2}-\d{2}$/)) {
-        dialogDateText.textContent = t('dialog_select_date');
-    }
-
-    const openAddDialogBtn = document.getElementById('openAddDialogBtn');
-    if (openAddDialogBtn) {
-        const span = openAddDialogBtn.querySelector('span');
-        if (span) span.textContent = ` ${t('add_task_button')}`;
-        openAddDialogBtn.setAttribute('aria-label', t('add_task_button'));
-        openAddDialogBtn.title = t('add_task_button');
-    }
 }
 
 // Open and close add todo dialog
@@ -351,6 +254,18 @@ function initBottomNav() {
                 return;
             }
 
+            if (view === 'search') {
+                const searchDialogEl = document.getElementById('searchDialog');
+                const wasOpen = searchDialogEl && !searchDialogEl.hidden;
+                closeAllDialogs({ skip: 'search' });
+                if (!wasOpen) {
+                    openSearchDialog();
+                } else {
+                    closeSearchDialog();
+                }
+                return;
+            }
+
             closeAllDialogs();
             navItems.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
@@ -374,11 +289,16 @@ function closeAllDialogs(options = {}) {
     const infoDialog = document.getElementById('infoDialog');
     if (infoDialog && !infoDialog.hidden) infoDialog.hidden = true;
 
-    const completedDialog = document.getElementById('completeDialog');
-    if (completedDialog && !completedDialog.hidden) completedDialog.hidden = true;
+    const completeDialog = document.getElementById('completeDialog');
+    if (completeDialog && !completeDialog.hidden) completeDialog.hidden = true;
 
     const deleteDialog = document.getElementById('deleteDialog');
     if (deleteDialog && !deleteDialog.hidden) deleteDialog.hidden = true;
+
+    const searchDialog = document.getElementById('searchDialog');
+    if (searchDialog && !searchDialog.hidden) {
+        searchDialog.hidden = true;
+    }
 
     if (skip !== 'language') {
         hideLanguageMenu();

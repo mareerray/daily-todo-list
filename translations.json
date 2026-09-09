@@ -75,7 +75,11 @@
             "dialog_complete_and_repeat": "Erledigt & morgen wiederholen",
             "dialog_delete_task_title": "Aufgabe löschen?",
             "dialog_delete_task_text": "Möchten Sie \"{task}\" wirklich löschen?",
-            "dialog_delete_confirm": "Löschen"
+            "dialog_delete_confirm": "Löschen",
+            "dialog_edit_task_title": "Aufgabe bearbeiten",
+            "search_dialog_title": "Aufgaben suchen",
+            "search_placeholder": "Suchen...",
+            "search_no_results": "Keine passenden Aufgaben"
         },
         "en": {
             "input_add_placeholder": "Add a new task ...",
@@ -139,7 +143,11 @@
             "dialog_complete_and_repeat": "Complete & repeat tomorrow",
             "dialog_delete_task_title": "Delete task?",
             "dialog_delete_task_text": "Are you sure you want to delete \"{task}\"?",
-            "dialog_delete_confirm": "Delete"
+            "dialog_delete_confirm": "Delete",
+            "dialog_edit_task_title": "Edit task",
+            "search_dialog_title": "Search tasks",
+            "search_placeholder": "Search...",
+            "search_no_results": "No matching tasks"
         },
         "es": {
             "input_add_placeholder": "Agregar una nueva tarea ...",
@@ -203,7 +211,11 @@
             "dialog_complete_and_repeat": "Completar y repetir mañana",
             "dialog_delete_task_title": "¿Eliminar tarea?",
             "dialog_delete_task_text": "¿Seguro que deseas eliminar \"{task}\"?",
-            "dialog_delete_confirm": "Eliminar"
+            "dialog_delete_confirm": "Eliminar",
+            "dialog_edit_task_title": "Editar tarea",
+            "search_dialog_title": "Buscar tareas",
+            "search_placeholder": "Buscar...",
+            "search_no_results": "No hay tareas coincidentes"
         },
         "fi": {
             "input_add_placeholder": "Lisää uusi tehtävä ...",
@@ -267,7 +279,11 @@
             "dialog_complete_and_repeat": "Valmis ja toista huomenna",
             "dialog_delete_task_title": "Poistetaanko tehtävä?",
             "dialog_delete_task_text": "Haluatko varmasti poistaa \"{task}\"?",
-            "dialog_delete_confirm": "Poista"
+            "dialog_delete_confirm": "Poista",
+            "dialog_edit_task_title": "Muokkaa tehtävää",
+            "search_dialog_title": "Hae tehtäviä",
+            "search_placeholder": "Hae...",
+            "search_no_results": "Vastaavia tehtäviä ei löytynyt"
         },
         "it": {
             "input_add_placeholder": "Aggiungi una nuova attività ...",
@@ -331,7 +347,11 @@
             "dialog_complete_and_repeat": "Completa e ripeti domani",
             "dialog_delete_task_title": "Eliminare l'attività?",
             "dialog_delete_task_text": "Sei sicuro di voler eliminare \"{task}\"?",
-            "dialog_delete_confirm": "Elimina"
+            "dialog_delete_confirm": "Elimina",
+            "dialog_edit_task_title": "Modifica attività",
+            "search_dialog_title": "Cerca attività",
+            "search_placeholder": "Cerca...",
+            "search_no_results": "Nessuna attività corrispondente"
         },
         "ja": {
             "input_add_placeholder": "新しいタスクを追加 ...",
@@ -395,7 +415,11 @@
             "dialog_complete_and_repeat": "完了して明日も繰り返す",
             "dialog_delete_task_title": "タスクを削除しますか？",
             "dialog_delete_task_text": "「{task}」を削除してもよろしいですか？",
-            "dialog_delete_confirm": "削除"
+            "dialog_delete_confirm": "削除",
+            "dialog_edit_task_title": "タスクを編集",
+            "search_dialog_title": "タスクを検索",
+            "search_placeholder": "検索...",
+            "search_no_results": "一致するタスクがありません"
         },
         "ko": {
             "input_add_placeholder": "새 작업을 추가 ...",
@@ -459,7 +483,11 @@
             "dialog_complete_and_repeat": "완료 및 내일 반복",
             "dialog_delete_task_title": "작업을 삭제하시겠습니까?",
             "dialog_delete_task_text": "\"{task}\"을(를) 삭제하시겠습니까?",
-            "dialog_delete_confirm": "삭제"
+            "dialog_delete_confirm": "삭제",
+            "dialog_edit_task_title": "작업 수정",
+            "search_dialog_title": "작업 검색",
+            "search_placeholder": "검색...",
+            "search_no_results": "일치하는 작업이 없습니다"
         },
         "ru": {
             "input_add_placeholder": "Добавьте новую задачу ...",
@@ -523,7 +551,11 @@
             "dialog_complete_and_repeat": "Завершить и повторить завтра",
             "dialog_delete_task_title": "Удалить задачу?",
             "dialog_delete_task_text": "Вы уверены, что хотите удалить \"{task}\"?",
-            "dialog_delete_confirm": "Удалить"
+            "dialog_delete_confirm": "Удалить",
+            "dialog_edit_task_title": "Редактировать задачу",
+            "search_dialog_title": "Поиск задач",
+            "search_placeholder": "Поиск...",
+            "search_no_results": "Совпадающих задач нет"
         },
         "sv": {
             "input_add_placeholder": "Lägg till en ny uppgift ...",
@@ -587,7 +619,11 @@
             "dialog_complete_and_repeat": "Slutför & upprepa imorgon",
             "dialog_delete_task_title": "Ta bort uppgiften?",
             "dialog_delete_task_text": "Är du säker på att du vill ta bort \"{task}\"?",
-            "dialog_delete_confirm": "Ta bort"
+            "dialog_delete_confirm": "Ta bort",
+            "dialog_edit_task_title": "Redigera uppgift",
+            "search_dialog_title": "Sök uppgifter",
+            "search_placeholder": "Sök...",
+            "search_no_results": "Inga matchande uppgifter"
         },
         "th": {
             "input_add_placeholder": "เพิ่มงานใหม่ ...",
@@ -651,7 +687,11 @@
             "dialog_complete_and_repeat": "เสร็จสิ้นและทำซ้ำพรุ่งนี้",
             "dialog_delete_task_title": "ลบงานนี้หรือไม่?",
             "dialog_delete_task_text": "คุณแน่ใจหรือไม่ว่าต้องการลบ \"{task}\"?",
-            "dialog_delete_confirm": "ลบ"
+            "dialog_delete_confirm": "ลบ",
+            "dialog_edit_task_title": "แก้ไขงาน",
+            "search_dialog_title": "ค้นหางาน",
+            "search_placeholder": "ค้นหา...",
+            "search_no_results": "ไม่พบงานที่ตรงกัน"
         },
         "uk": {
             "input_add_placeholder": "Додайте нове завдання ...",
@@ -715,7 +755,11 @@
             "dialog_complete_and_repeat": "Завершити й повторити завтра",
             "dialog_delete_task_title": "Видалити завдання?",
             "dialog_delete_task_text": "Ви впевнені, що хочете видалити \"{task}\"?",
-            "dialog_delete_confirm": "Видалити"
+            "dialog_delete_confirm": "Видалити",
+            "dialog_edit_task_title": "Редагувати завдання",
+            "search_dialog_title": "Пошук завдань",
+            "search_placeholder": "Пошук...",
+            "search_no_results": "Відповідних завдань не знайдено"
         }
     }
 }
