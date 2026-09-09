@@ -20,6 +20,18 @@ function initTodos() {
     if (searchInput) {
         searchInput.addEventListener('input', (e) => renderSearchResults(e.target.value));
     }
+
+    const searchResultsList = document.getElementById('searchResultsList');
+    if (searchResultsList) {
+        searchResultsList.addEventListener('click', goToSearchResultDate);
+
+        searchResultsList.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                goToSearchResultDate(e);
+            }
+        });
+    }
 }
 
 function addTodo(event) {
@@ -257,9 +269,20 @@ function renderSearchResults(keyword) {
 
     matches.forEach(todo => {
         const todoDiv = document.createElement('div');
+
         todoDiv.classList.add('todo');
         todoDiv.dataset.priority = todo.priority;
-        if (todo.completed) todoDiv.classList.add('completed');
+
+        todoDiv.dataset.dueDate = todo.dueDate;
+        todoDiv.dataset.id = todo.id;
+
+        if (todo.completed) {
+            todoDiv.classList.add('completed');
+        }
+
+        todoDiv.tabIndex = 0; 
+        todoDiv.setAttribute('role', 'button'); 
+        todoDiv.setAttribute('aria-label', `${todo.text}, ${todo.dueDate}`);
 
         const dateLabel = document.createElement('span');
         dateLabel.classList.add('search-result-date');
@@ -281,6 +304,26 @@ function searchTodos(keyword) {
     return todos
         .filter(t => t.text.toLowerCase().includes(lower))
         .sort((a, b) => a.dueDate.localeCompare(b.dueDate));
+}
+
+function goToSearchResultDate(e) {
+    const result = e.target.closest('.todo');
+
+    // User clicked empty space, not a search result.
+    if (!result) return;
+
+    const dueDate = result.dataset.dueDate;
+
+    // A result without a date cannot be opened.
+    if (!dueDate) return;
+
+    // "YYYY-MM-DDT00:00:00" avoids timezone shifting the date backward.
+    const selectedDate = new Date(`${dueDate}T00:00:00`);
+
+    setSelectedDate(selectedDate);
+    updateDateDisplay();
+    displayTodosForDate(selectedDate);
+    closeSearchDialog();
 }
 
 function displayTodosForDate(date) {
