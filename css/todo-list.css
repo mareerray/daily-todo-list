@@ -166,6 +166,12 @@
     border-left-color: rgb(73, 204, 73);
 }
 
+.todo button:disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
 .fall {
     transform: translateY(8rem) rotateZ(20deg);
     opacity: 0;

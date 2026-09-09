@@ -112,6 +112,31 @@
         </div>
     </div>
 
+    <!-- COMPLETE-CONFIRM DIALOG -->
+<div id="completeDialog" class="dialog-overlay" hidden>
+    <div class="dialog-box">
+        <h3 id="completeDialogTitle" class="dialog-title">Complete task?</h3>
+
+        <p id="completeDialogTaskText" class="welcome-text"></p>
+
+        <div class="input-group">
+            <button id="completeOnlyBtn" type="button" class="todo-button">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Mark complete</span>
+            </button>
+
+            <button id="completeAndRepeatBtn" type="button" class="todo-button">
+                <i class="bi bi-arrow-repeat"></i>
+                <span>Complete &amp; repeat tomorrow</span>
+            </button>
+
+            <button id="completeCancelBtn" type="button" class="dialog-cancel">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+
     <!-- WELCOME DIALOG (first-time users only) -->
     <div id="welcomeDialog" class="dialog-overlay" hidden>
         <div class="dialog-box welcome-box">
