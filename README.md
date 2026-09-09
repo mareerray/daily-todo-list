@@ -20,6 +20,7 @@ The simple version is kept as a standalone, dependency-free snapshot for anyone 
 - Confirm dialog before deleting a task, to prevent accidental removal
 - Reprioritize tasks by editing their priority level — doubles as manual reordering, since the list sorts by priority
 - Filter and sort tasks by priority, status, and date
+- Search tasks by keyword across all dates, with results showing the task's date
 - Swipe left/right on touchscreen devices to move between days (phones, tablets, touchscreen laptops); arrow buttons handle date navigation on desktop/trackpad
 - Calendar view with date-based navigation for daily planning
 - Color-coded calendar dots highlight incomplete tasks by status: overdue, due today, or upcoming
