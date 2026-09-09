@@ -95,7 +95,7 @@ function addTodoFromDialog() {
 function deleteCheck(e) {
     const item = e.target;
 
-    // Edit
+    // Edit TODO
     if (item.classList.contains('edit-btn') || item.parentElement.classList.contains('edit-btn')) {
         const todo = item.closest('.todo');
         openEditDialog(todo.dataset.id);
@@ -127,23 +127,76 @@ function deleteCheck(e) {
         });
     }
 
-    // Check Mark
+    // Complete TODO
     if (item.classList.contains('complete-btn') || item.parentElement.classList.contains('complete-btn')) {
         const todo = item.closest('.todo');
         const todoId = todo.dataset.id;
-        todo.classList.toggle('completed');
 
         const todos = getTodosFromStorage();
         const todoIndex = todos.findIndex(t => t.id === todoId);
-        if (todoIndex > -1) {
-            todos[todoIndex].completed = !todos[todoIndex].completed;
-            localStorage.setItem('todos', JSON.stringify(todos));
+        if (todoIndex === -1) return;
 
-            if (todos[todoIndex].completed) {
-                Rewards.celebrate();
-            }
-        }
+        // Only ask about repeat when marking complete, not when un-completing
+        if (!todos[todoIndex].completed) {
+            openCompleteDialog(todoId);
+        } 
     }
+}
+
+function openCompleteDialog(todoId) {
+    const todos = getTodosFromStorage();
+    const todo = todos.find(t => t.id === todoId);
+    if (!todo) return;
+
+    document.getElementById('completeDialogTaskText').textContent = todo.text;
+    document.getElementById('completeDialog').hidden = false;
+
+    document.getElementById('completeOnlyBtn').onclick = () => {
+        toggleComplete(todoId);
+        document.getElementById('completeDialog').hidden = true;
+    };
+
+    document.getElementById('completeAndRepeatBtn').onclick = () => {
+        completeAndRepeat(todoId);
+        document.getElementById('completeDialog').hidden = true;
+    };
+
+    document.getElementById('completeCancelBtn').onclick = () => {
+        document.getElementById('completeDialog').hidden = true;
+    };
+}
+
+function toggleComplete(todoId) {
+    const todos = getTodosFromStorage();
+    const todoIndex = todos.findIndex(t => t.id === todoId);
+    if (todoIndex === -1) return;
+
+    todos[todoIndex].completed = !todos[todoIndex].completed;
+    localStorage.setItem('todos', JSON.stringify(todos));
+
+    if (todos[todoIndex].completed) {
+        Rewards.celebrate();
+    }
+    displayTodosForDate(getSelectedDate());
+}
+
+function completeAndRepeat(todoId) {
+    toggleComplete(todoId);
+
+    const todos = getTodosFromStorage();
+    const original = todos.find(t => t.id === todoId);
+    if (!original) return;
+
+    const tomorrow = new Date(getSelectedDate());
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const repeatedTodo = {
+        text: original.text,
+        priority: original.priority,
+        dueDate: formatDateKey(tomorrow),
+        completed: false
+    };
+    saveTodoToStorage(repeatedTodo);
 }
 
 function displayTodosForDate(date) {
@@ -181,19 +234,31 @@ function displayTodosForDate(date) {
             newTodo.classList.add('todo-item');
             todoDiv.appendChild(newTodo);
 
+            // Add edit button
             const editButton = document.createElement('button');
             editButton.innerHTML = '<i class="bi bi-pencil-fill"></i>';
             editButton.classList.add('edit-btn');
+            if (todo.completed) {
+                editButton.disabled = true;
+            }
             todoDiv.appendChild(editButton);
 
+            // Add complete button
             const completedButton = document.createElement('button');
             completedButton.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
             completedButton.classList.add('complete-btn');
+            if (todo.completed) {
+                completedButton.disabled = true;
+            }
             todoDiv.appendChild(completedButton);
 
+            // Add delete button
             const trashButton = document.createElement('button');
             trashButton.innerHTML = '<i class="bi bi-trash-fill"></i>';
             trashButton.classList.add('trash-btn');
+            // if (todo.completed) {
+            //     trashButton.disabled = true;
+            // }
             todoDiv.appendChild(trashButton);
 
             todoList.appendChild(todoDiv);
