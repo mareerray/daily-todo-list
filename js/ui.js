@@ -198,6 +198,36 @@ function applyTranslations() {
     const dialogTitle = document.getElementById('dialogTitle');
     if (dialogTitle) dialogTitle.textContent = t('dialog_add_task_title');
 
+    const completeDialogTitle = document.getElementById('completeDialogTitle');
+    if (completeDialogTitle) completeDialogTitle.textContent = t('dialog_complete_task_title');
+
+    const completeOnlyBtn = document.getElementById('completeOnlyBtn');
+    if (completeOnlyBtn) {
+        const span = completeOnlyBtn.querySelector('span');
+        if (span) span.textContent = t('dialog_complete_only');
+    }
+
+    const completeAndRepeatBtn = document.getElementById('completeAndRepeatBtn');
+    if (completeAndRepeatBtn) {
+        const span = completeAndRepeatBtn.querySelector('span');
+        if (span) span.textContent = t('dialog_complete_and_repeat');
+    }
+
+    const completeCancelBtn = document.getElementById('completeCancelBtn');
+    if (completeCancelBtn) completeCancelBtn.textContent = t('dialog_cancel_button');
+
+    const deleteDialogTitle = document.getElementById('deleteDialogTitle');
+    if (deleteDialogTitle) deleteDialogTitle.textContent = t('dialog_delete_task_title');
+
+    const deleteConfirmBtn = document.getElementById('deleteConfirmBtn');
+    if (deleteConfirmBtn) {
+        const span = deleteConfirmBtn.querySelector('span');
+        if (span) span.textContent = t('dialog_delete_confirm');
+    }
+
+    const deleteCancelBtn = document.getElementById('deleteCancelBtn');
+    if (deleteCancelBtn) deleteCancelBtn.textContent = t('dialog_cancel_button');
+
     const dialogPriorityLabel = document.getElementById('dialogPriorityLabel');
     if (dialogPriorityLabel) dialogPriorityLabel.textContent = t('dialog_choose_priority');
 
@@ -343,6 +373,12 @@ function closeAllDialogs(options = {}) {
 
     const infoDialog = document.getElementById('infoDialog');
     if (infoDialog && !infoDialog.hidden) infoDialog.hidden = true;
+
+    const completedDialog = document.getElementById('completeDialog');
+    if (completedDialog && !completedDialog.hidden) completedDialog.hidden = true;
+
+    const deleteDialog = document.getElementById('deleteDialog');
+    if (deleteDialog && !deleteDialog.hidden) deleteDialog.hidden = true;
 
     if (skip !== 'language') {
         hideLanguageMenu();

@@ -106,25 +106,8 @@ function deleteCheck(e) {
     if (item.classList.contains('trash-btn') || item.parentElement.classList.contains('trash-btn')) {
         const todo = item.closest('.todo');
         const todoId = todo.dataset.id;
-        const todoText = todo.children[1].innerText;
-
-        const confirmMsg = t('confirm_delete', { task: todoText });
-        if (!confirm(confirmMsg)) return;
-
-        todo.classList.add('fall');
-        removeTodoFromStorage(todoId);
-
-        if (calendarOverlay.classList.contains('active')) {
-            renderCalendar();
-        }
-
-        todo.addEventListener('transitionend', function () {
-            todo.remove();
-            const remainingTodos = todoList.querySelectorAll('.todo');
-            if (remainingTodos.length === 0) {
-                displayTodosForDate(getSelectedDate());
-            }
-        });
+        openDeleteDialog(todoId);
+        return;
     }
 
     // Complete TODO
@@ -197,6 +180,44 @@ function completeAndRepeat(todoId) {
         completed: false
     };
     saveTodoToStorage(repeatedTodo);
+}
+
+function openDeleteDialog(todoId) {
+    const todos = getTodosFromStorage();
+    const todo = todos.find(t => t.id === todoId);
+    if (!todo) return;
+
+    document.getElementById('deleteDialogTaskText').textContent = todo.text;
+    document.getElementById('deleteDialog').hidden = false;
+
+    document.getElementById('deleteConfirmBtn').onclick = () => {
+        performDelete(todoId);
+        document.getElementById('deleteDialog').hidden = true;
+    };
+
+    document.getElementById('deleteCancelBtn').onclick = () => {
+        document.getElementById('deleteDialog').hidden = true;
+    };
+}
+
+function performDelete(todoId) {
+    const todoEl = todoList.querySelector(`.todo[data-id="${todoId}"]`);
+    if (!todoEl) return;
+
+    todoEl.classList.add('fall');
+    removeTodoFromStorage(todoId);
+
+    if (calendarOverlay.classList.contains('active')) {
+        renderCalendar();
+    }
+
+    todoEl.addEventListener('transitionend', function () {
+        todoEl.remove();
+        const remainingTodos = todoList.querySelectorAll('.todo');
+        if (remainingTodos.length === 0) {
+            displayTodosForDate(getSelectedDate());
+        }
+    });
 }
 
 function displayTodosForDate(date) {
