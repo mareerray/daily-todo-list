@@ -13,8 +13,13 @@ Thumbs.db
 # Logs
 *.log
 
-# Environment secrets (if you add any later)
+# Environment secrets
 .env
-.vercel
+.env.local
+.env.*.local
 
+# Vercel local project settings
+.vercel/
+
+# Installed npm packages — recreated with npm install
 node_modules/
