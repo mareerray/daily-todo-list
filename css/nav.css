@@ -28,6 +28,11 @@
     gap: 4px;
 }
 
+.nav-center-space {
+    width: 5px;
+    flex: 0 0 5px;
+}
+
 .nav-item:not(.nav-item--add):hover {
     color: var(--clr-btn-accent);
     transform: translateY(-2px);
