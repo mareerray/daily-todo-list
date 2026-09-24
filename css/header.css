@@ -119,8 +119,8 @@ header {
 
 
 .date-nav-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(30, 30, 30, 0.1);
+    border: 1px solid rgba(30, 30, 30, 0.5);
     color: var(--clr-light);
     width: 32px;
     height: 32px;
