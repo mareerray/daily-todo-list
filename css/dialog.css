@@ -207,7 +207,7 @@
 /* Search only: stick to the top so the keyboard can't cover it */
 #searchDialog:not([hidden]) {
     align-items: flex-start;
-    padding-top: 12px;
+    padding-top: 70px;
 }
 
 #searchDialog .dialog-box {
