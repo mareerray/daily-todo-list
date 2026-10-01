@@ -323,8 +323,12 @@
             <h3 id="searchDialogTitle" class="dialog-title">Search tasks</h3>
 
             <div class="input-group">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search by task name..."
-                    maxlength="50">
+                <input type="text" id="searchInput" class="search-input" 
+                    placeholder="Search by task name..."
+                    maxlength="50" 
+                    autocomplete="off" autocorrect="off" 
+                    autocapitalize="off" spellcheck="false"
+                    enterkeyhint="search">
             </div>
 
             <ul id="searchResultsList" class="todo-list"></ul>

@@ -197,3 +197,33 @@
     outline: 2px solid #ff6b4a;
     outline-offset: 2px;
 }
+
+/* The title, close button, and input never shrink when the results list grows */
+#searchDialog .dialog-title,
+#searchDialog .input-group {
+    flex: 0 0 auto;
+}
+
+/* Search only: stick to the top so the keyboard can't cover it */
+#searchDialog:not([hidden]) {
+    align-items: flex-start;
+    padding-top: 12px;
+}
+
+#searchDialog .dialog-box {
+    max-height: 55dvh;     /* leaves room for the keyboard */
+    overflow: hidden;      /* the box doesn't scroll... */
+}
+
+#searchDialog #searchResultsList {
+    flex: 1 1 auto;
+    min-height: 0;         /* needed so flex children can scroll */
+    overflow-y: auto;      /* ...only the results do */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* No hover jump on touch screens */
+@media (hover: none) {
+    #searchResultsList .todo:hover { transform: none; }
+}
