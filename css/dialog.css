@@ -211,7 +211,7 @@
 }
 
 #searchDialog .dialog-box {
-    max-height: 55dvh;     /* leaves room for the keyboard */
+    max-height: 70dvh;     /* leaves room for the keyboard */
     overflow: hidden;      /* the box doesn't scroll... */
 }
 
