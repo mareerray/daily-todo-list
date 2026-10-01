@@ -161,9 +161,17 @@
 }
 
 .completed {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     opacity: 0.2;
     border-left-color: rgb(73, 204, 73);
+}
+
+.completed .todo-item {
+    text-decoration: line-through;
+}
+
+.completed .search-result-date {
+    text-decoration: none;
 }
 
 .todo button:disabled {
