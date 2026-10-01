@@ -245,6 +245,8 @@ function openSearchDialog() {
 }
 
 function closeSearchDialog() {
+    console.trace('closeSearchDialog called');
+    
     const searchDialog = document.getElementById('searchDialog');
     if (searchDialog) {
         searchDialog.hidden = true;

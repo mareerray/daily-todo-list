@@ -275,6 +275,8 @@ function initBottomNav() {
 // Pass { skip: 'calendar' | 'add' | 'language' } to avoid closing
 // the one thing you're about to open right after calling this.
 function closeAllDialogs(options = {}) {
+    console.trace('closeAllDialogs called', options);
+    
     const skip = options.skip;
 
     if (skip !== 'add') {
