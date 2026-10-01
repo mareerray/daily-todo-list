@@ -255,14 +255,10 @@ function initBottomNav() {
             }
 
             if (view === 'search') {
-                const searchDialogEl = document.getElementById('searchDialog');
-                const wasOpen = searchDialogEl && !searchDialogEl.hidden;
+                const el = document.getElementById('searchDialog');
+                const wasOpen = el && !el.hidden;
                 closeAllDialogs({ skip: 'search' });
-                if (!wasOpen) {
-                    openSearchDialog();
-                } else {
-                    closeSearchDialog();
-                }
+                wasOpen ? closeSearchDialog() : openSearchDialog();
                 return;
             }
 
@@ -295,9 +291,9 @@ function closeAllDialogs(options = {}) {
     const deleteDialog = document.getElementById('deleteDialog');
     if (deleteDialog && !deleteDialog.hidden) deleteDialog.hidden = true;
 
-    const searchDialog = document.getElementById('searchDialog');
-    if (searchDialog && !searchDialog.hidden) {
-        searchDialog.hidden = true;
+    if (skip !== 'search') {
+        const searchDialog = document.getElementById('searchDialog');
+        if (searchDialog && !searchDialog.hidden) searchDialog.hidden = true;
     }
 
     if (skip !== 'language') {
