@@ -4,6 +4,8 @@ A responsive daily task planner with priority levels, filtering, sorting, calend
 
 ## Live Demos
 
+[▶ Watch the demo on YouTube](https://youtube.com/shorts/B-17DYEkcIg)
+
 This project has two versions, deployed separately:
 
 | Version | Description | Stack | Live Link |
