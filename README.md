@@ -46,7 +46,7 @@ The simple version is kept as a standalone, dependency-free snapshot for anyone 
 ## Tech Stack
 
 - **Frontend:** Vanilla JavaScript, HTML, CSS
-- **Backend:** Node.js serverless functions (`stt.js`, `tts.js`) for speech processing, deployed on Vercel
+- **Backend:** Node.js serverless functions (`stt.js`, `tts.js`) deployed on Vercel, integrated with the ElevenLabs API for speech-to-text
 - **PWA:** Web App Manifest, offline-friendly design
 - **Storage:** Browser local storage for task persistence
 
@@ -80,7 +80,7 @@ cd daily-todo-list
 npm install
 ```
 
-Set up any required environment variables for the speech-to-text API key, then run the project locally using Vercel's CLI for full serverless function support:
+Set up any required environment variables for the speech-to-text API key (ELEVENLABS_API_KEY), then run the project locally using Vercel's CLI for full serverless function support:
 
 ```bash
 vercel dev
